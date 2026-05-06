@@ -19,9 +19,25 @@ Thumbs.db
 Desktop.ini
 .DS_Store
 
+# Secrets, credentials, and private key material
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_rsa.*
+id_ed25519
+id_ed25519.*
+*.ppk
+*.pub
+known_hosts
+known_hosts.*
+config.local
+secrets/
+credentials/
+
 # WordPress/runtime artifacts that do not belong in the theme
 *.sql
 *.zip
 *.tar
 *.tar.gz
-
