@@ -1,0 +1,27 @@
+# Dependencies and build output
+node_modules/
+vendor/
+dist/
+build/
+
+# Logs and caches
+*.log
+.cache/
+.sass-cache/
+.eslintcache
+.stylelintcache
+
+# Environment and local machine files
+.env
+.env.*
+!.env.example
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# WordPress/runtime artifacts that do not belong in the theme
+*.sql
+*.zip
+*.tar
+*.tar.gz
+
