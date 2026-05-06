@@ -21,6 +21,10 @@
 - `parts/header.html` and `parts/footer.html` were replaced with Paradis-specific block template parts for inner pages
 - Default Twenty Twenty-Five footer/header pattern references are no longer used by the main page templates
 - `templates/front-page.html` keeps the homepage custom: no normal header, custom hero/body, and a minimal copyright footer
+- `functions.php` enqueues `style.css` directly because there is no active minification/build step updating `style.min.css`
+- Google Fonts currently enqueued: `Inter` and `Playfair Display`
+- Theme metadata in `style.css` identifies the theme as `Paradis Flooring Codex`
+- `.gitignore` now blocks common local secrets and SSH key filenames
 
 ## Verification Notes
 
@@ -30,6 +34,8 @@
 - Gallery, CTA band, and footer render below the hero
 - Inner `Services` page was checked and now shows the Paradis header with simple navigation
 - Full-page screenshots can visually repeat the hero due browser capture stitching; scroll-by-scroll verification showed the actual page order is correct
+- Browser plugin/local browser workflow worked after Node was updated to v24.15.0/npm 11.12.1
+- GitHub push succeeded after setting this project to use Windows OpenSSH for Git SSH commands
 
 ## Track Here
 

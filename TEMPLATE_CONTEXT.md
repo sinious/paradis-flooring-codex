@@ -8,6 +8,7 @@
 
 - Primary concept: `concepts/concept-10.png`
 - Hero asset: `concepts/concept-10-hero.webp`
+- Active uploaded hero URL: `/wp-content/uploads/2026/05/concept-10-hero.webp`
 - Canonical brand rules: `BRAND_GUIDE.md`
 
 ## Scope
@@ -46,12 +47,14 @@
 ## Asset Use
 
 - Use `concepts/concept-10-hero.webp` as the homepage hero image if suitable in layout and quality
-- Treat gallery imagery in the concept as structure and mood reference unless final assets are explicitly provided
+- Current front page uses the uploaded hero from `/wp-content/uploads/2026/05/concept-10-hero.webp`
+- Current gallery uses real uploaded flooring images from `/wp-content/uploads/2026/05/paradis_flooring_*.webp`
+- Treat gallery imagery in the bitmap concept as structure and mood reference when final assets are not explicitly provided
 
 ## Typography Constraints
 
 - Google Fonts only
-- Prefer the editorial-serif plus clean-sans pairing established in `BRAND_GUIDE.md`
+- Current implementation uses `Playfair Display` for editorial serif and `Inter` for clean sans/body/UI
 
 ## Implementation Priorities
 

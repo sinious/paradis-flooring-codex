@@ -21,10 +21,14 @@
 - Prefer concise answers and factual responses
 - Avoid sandbox/setup guidance unless explicitly requested
 - Favor explicit file paths and repo-aware implementation help
+- Do not recommend or encourage Agent sandbox / backup sandbox for this workflow
+- The right-side Codex panel is not a normal filesystem tree; reference files by project-relative paths such as `concepts/concept-10.png`
 
 ## Current Status
 
 - Project is attached in Codex using the existing local folder
+- This folder is now a Git repository with private GitHub remote `git@github.com:sinious/paradis-flooring-codex.git`
+- Initial theme work and context files have been committed and pushed to GitHub
 - `PERSONA.md` exists and should be used as communication guidance
 - Current source-of-truth concept image: `concepts/concept-10.png`
 - `concepts/concept-10.png` is sufficient to build a strong FSE front page implementation
@@ -43,6 +47,7 @@
 - `TEMPLATE_CONTEXT.md`: template structure, section mapping, responsive assumptions, and asset usage for FSE implementation
 - `WORDPRESS_FSE.md`: distilled WordPress block theme/FSE docs and project-specific implementation rules
 - `CODEX_RULES.md`: safe operating boundaries and permission warm-up commands
+- `GIT_CONTEXT.md`: GitHub remote, SSH fix, push workflow, and secret-safety notes
 
 ## Resume Instructions
 
@@ -55,3 +60,4 @@
   - `CSS_CONTEXT.md` for styling-specific work
   - `TEMPLATE_CONTEXT.md` for FSE template-building work
   - `WORDPRESS_FSE.md` for WordPress block theme/FSE mechanics
+  - `GIT_CONTEXT.md` for Git commits, pushes, remotes, SSH, or repo safety

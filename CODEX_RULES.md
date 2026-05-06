@@ -16,6 +16,7 @@
 - Do not install software, Linux, WSL distributions, global packages, or system tools without explicit approval.
 - Do not use full-system access unless the user explicitly asks for it for a specific task.
 - Do not use broad arbitrary scripting outside the project.
+- Do not store, echo into files, commit, or log secrets such as passphrases, private keys, API keys, WP credentials, or tokens.
 - Do not modify another theme, plugin, upload, database, or WordPress setting unless it is required for this project and the user has approved the direction.
 - Do not change credentials, users, roles, security settings, SMTP settings, or production-like data unless explicitly requested.
 
@@ -28,6 +29,7 @@
 - Read uploads/plugin/theme files when directly relevant to the active WordPress theme build.
 - Validate project files such as JSON, CSS, PHP, and block template markup.
 - Use browser inspection to verify rendering.
+- Use Git inside this project for commits and pushes when requested or when saving completed project context updates.
 
 ## Permission Warm-Up Commands
 
@@ -60,6 +62,7 @@ These are safe commands Codex may run to establish session approvals for normal 
 - Any command touching unrelated repositories.
 - Any database write or WordPress admin setting change.
 - Any operation involving credentials, users, roles, email, SMTP, or security settings.
+- Any request to place secrets in commands, files, docs, commits, screenshots, or issue text.
 
 ## Behavior
 
@@ -67,3 +70,4 @@ These are safe commands Codex may run to establish session approvals for normal 
 - Stop only for real blockers, destructive actions, broad access, credentials, or unclear high-risk changes.
 - Prefer direct, factual status updates.
 - Record durable project decisions in the appropriate context file.
+- If Git/SSH fails because a passphrase prompt cannot be shown inside Codex, use the Windows OpenSSH project config documented in `GIT_CONTEXT.md`.

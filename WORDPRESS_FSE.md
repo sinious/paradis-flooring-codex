@@ -104,6 +104,8 @@
 - This theme intentionally hides the default header/footer on `.home` and builds a custom front page
 - `style.css` is currently loaded directly because the theme does not have a CSS build/minification step for new custom styles
 - If a future build process is added, update `style.min.css` or change the enqueue strategy
+- The front page is custom and should not use the normal header; inner pages use `parts/header.html` and `parts/footer.html`
+- Site Editor saved templates can override theme files; check this if file edits do not show
 
 ## Working Checklist
 

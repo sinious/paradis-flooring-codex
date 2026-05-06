@@ -16,6 +16,9 @@
 - Hero copy must stay constrained to the left wall area of that image
 - Below tablet width, hero copy needs an explicit max-width so block columns do not make it too narrow
 - Do not trust full-page browser screenshots alone for this page; verify by viewport scrolling when background images are involved
+- The homepage intentionally uses custom CSS for art direction while keeping block markup FSE-compatible
+- Keep global tokens in `theme.json`; keep composition-specific selectors in `style.css`
+- Watch for hero image resolution/crop changes; copy placement depends on the wall/negative-space area of the image
 
 ## Use Cases
 
