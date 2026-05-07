@@ -5,7 +5,8 @@
 - Overall: keep Claude's implementation direction, with art-direction guardrails.
 - Claude appears to have improved the technical foundation without flattening the concept.
 - The effects layer is acceptable if it stays slow, subtle, and secondary to the contact path.
-- Final approval still needs visual inspection of screenshots or the live page because this review is based on `handoff/FROM_CLAUDE.md`, not a rendered capture.
+- Live desktop visual inspection was completed at `http://localhost/client/`, `/services/`, and `/about/`.
+- Mobile still needs separate device/viewport verification.
 
 ## Decision 1: Wood Grain Wordmark
 
@@ -14,6 +15,7 @@
 - Risk: if the hero image changes, the wordmark may become brittle or visually muddy.
 - Direction: keep it as a homepage-only premium flourish, but add a static gold/bronze fallback treatment.
 - Requirement: the wordmark must remain legible, quiet, and premium. If the grain competes with the headline or CTA, use the static gold treatment instead.
+- Live review: current hero wordmark is subtle, legible, and does not compete with the headline. Keep current treatment with fallback guardrails.
 
 ## Decision 2: Inner Page Copy
 
@@ -22,6 +24,7 @@
 - Do not treat it as final client copy yet.
 - Direction: rewrite later into shorter, sharper, contact-forward copy once service details and business claims are confirmed.
 - Brand rule: avoid mission fluff, long paragraphs, and vague premium claims.
+- Live review: Services copy is usable and structurally strong. About copy is better than generic filler but still needs final factual confirmation, especially claims such as crew/subcontractor language.
 
 ## Decision 3: Gallery Images
 
@@ -30,6 +33,7 @@
 - The warm-tone overlay is acceptable as a unifying treatment if it does not make the photos look fake, muddy, or over-filtered.
 - Do not replace the gallery with GPT-generated lifestyle renders for client-ready proof.
 - Direction: use generated lifestyle renders only as supplemental concept/hero/atmosphere assets, not as proof of work.
+- Live review: keep real photos, but the gallery is the weakest visual section compared with the premium hero. It reads trustworthy but less luxurious. Improve via crop/order/selection before replacing with generated imagery.
 
 ## Adopt
 
@@ -40,6 +44,8 @@
 - Shared CTA band pattern across pages.
 - `@supports` guards for scroll-driven and advanced CSS effects.
 - Warm gallery overlay if visual inspection confirms it stays natural.
+- Current desktop hero, value strip, CTA band, and footer visual rhythm.
+- Inner page dark hero bands; they feel appropriately premium on desktop.
 
 ## Reject
 
@@ -55,6 +61,8 @@
 - Film grain: keep only if it is nearly invisible and adds warmth, not dirt.
 - Inner page hero bands: approve the dark premium direction, but confirm height by viewport. They should feel confident, not heavy.
 - Services/About copy: keep short, specific, and conversion-oriented. Rewrite before client handoff.
+- Gallery: keep real work proof, but consider reducing weaker hallway/doorframe-heavy crops and leading with the strongest sunlit/refinished-floor images.
+- Header/nav: desktop treatment looks polished and appropriately quiet.
 
 ## Implementation Notes For Claude
 
@@ -66,10 +74,16 @@
 
 ## Next Visual QA Needed
 
-- Desktop front page first viewport.
 - Mobile 390x844 front page.
-- Gallery section with warm overlay.
-- Services page hero and service cards.
-- About page hero and copy block.
+- Mobile Services and About pages.
 - Hover/focus states for CTA buttons.
 - Unsupported-browser fallback if practical.
+
+## Live Desktop Review Notes
+
+- Homepage hero: strong. Premium, clear, memorable, and close to the concept. CTA is obvious without feeling cheap.
+- Value strip: clean and trustworthy. Icons are restrained enough.
+- Gallery: correct proof strategy, but visual quality varies. This should stay real-photo-first, but the curation needs continued pressure.
+- Bottom CTA/footer: strong. Calm, polished, and contact-forward.
+- Services page: dark hero weight is good. Copy is plausible and layout feels professional.
+- About page: visually strong. Main copy is readable and grounded, but final factual claims need owner/client confirmation.
