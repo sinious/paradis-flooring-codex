@@ -6,6 +6,9 @@
 - Theme base: copy of `twentytwentyfive`
 - Workspace intent: use this real local theme folder as the Codex project/workspace
 - This folder is reserved for Codex work
+- Reusable Codex context has been copied to global path: `C:\Work\Codex\contexts\paradis-flooring`
+- Start future context loading from `C:\Work\Codex\contexts\paradis-flooring\README.md`
+- Claude's active real theme folder is `C:\Work\wamp64\www\client\wp-content\themes\paradis-flooring`
 
 ## Goal
 

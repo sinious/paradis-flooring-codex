@@ -4,6 +4,7 @@
 
 For any task in this repository, load these files first:
 
+0. `GLOBAL_CONTEXT.md`
 1. `PERSONA.md`
 2. `CODEX_CONTEXT.md`
 3. `CODEX_RULES.md`
