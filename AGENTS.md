@@ -22,6 +22,8 @@ Load additional context files when the task calls for them:
 - `CODEX_RULES.md` for safe operating boundaries and permission warm-up commands
 - `GIT_CONTEXT.md` for GitHub remote, SSH behavior, commits, pushes, and repo safety
 - `DIRECTOR_BRIEF.md` for multi-tool creative direction, agent roles, competitor-aware site briefs, and "have fun but serve the goal" guidance
+- `CLAUDE_BRIDGE.md` for Claude/Codex handoff instructions, artifact contracts, and collaboration protocol
+- `handoff/` for active Claude/Codex handoff artifacts, screenshots, diffs, and reviews
 
 ## Working Rules
 

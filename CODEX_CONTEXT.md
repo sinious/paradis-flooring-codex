@@ -49,6 +49,8 @@
 - `CODEX_RULES.md`: safe operating boundaries and permission warm-up commands
 - `GIT_CONTEXT.md`: GitHub remote, SSH fix, push workflow, and secret-safety notes
 - `DIRECTOR_BRIEF.md`: creative build brief and Codex/Claude collaboration model
+- `CLAUDE_BRIDGE.md`: Markdown instructions for Claude/Codex collaboration and handoff artifacts
+- `handoff/`: shared artifact folder for Claude/Codex instructions, reviews, screenshots, diffs, and temporary assets
 
 ## Resume Instructions
 
@@ -63,3 +65,5 @@
   - `WORDPRESS_FSE.md` for WordPress block theme/FSE mechanics
   - `GIT_CONTEXT.md` for Git commits, pushes, remotes, SSH, or repo safety
   - `DIRECTOR_BRIEF.md` for broad creative-build direction or coordinating multiple tools
+  - `CLAUDE_BRIDGE.md` when asking Claude to collaborate or when reviewing Claude's handoff
+  - `handoff/FROM_CLAUDE.md` when Claude has returned implementation notes for Codex review

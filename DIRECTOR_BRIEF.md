@@ -34,6 +34,7 @@ Output: Working FSE theme files, screenshots/browser verification, context updat
 ## Collaboration Model
 
 - Keep tool workspaces isolated when possible.
+- Use `CLAUDE_BRIDGE.md` as the detailed Markdown protocol for Claude/Codex handoff.
 - Exchange artifacts rather than letting tools trample the same files:
   - screenshots
   - rendered page captures
