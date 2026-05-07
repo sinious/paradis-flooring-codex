@@ -21,6 +21,7 @@ Load additional context files when the task calls for them:
 - `IMPLEMENTATION_NOTES.md` when resuming implementation, reviewing prior build decisions, or recording technical decisions
 - `CODEX_RULES.md` for safe operating boundaries and permission warm-up commands
 - `GIT_CONTEXT.md` for GitHub remote, SSH behavior, commits, pushes, and repo safety
+- `DIRECTOR_BRIEF.md` for multi-tool creative direction, agent roles, competitor-aware site briefs, and "have fun but serve the goal" guidance
 
 ## Working Rules
 

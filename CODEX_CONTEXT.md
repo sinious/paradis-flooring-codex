@@ -48,6 +48,7 @@
 - `WORDPRESS_FSE.md`: distilled WordPress block theme/FSE docs and project-specific implementation rules
 - `CODEX_RULES.md`: safe operating boundaries and permission warm-up commands
 - `GIT_CONTEXT.md`: GitHub remote, SSH fix, push workflow, and secret-safety notes
+- `DIRECTOR_BRIEF.md`: creative build brief and Codex/Claude collaboration model
 
 ## Resume Instructions
 
@@ -61,3 +62,4 @@
   - `TEMPLATE_CONTEXT.md` for FSE template-building work
   - `WORDPRESS_FSE.md` for WordPress block theme/FSE mechanics
   - `GIT_CONTEXT.md` for Git commits, pushes, remotes, SSH, or repo safety
+  - `DIRECTOR_BRIEF.md` for broad creative-build direction or coordinating multiple tools

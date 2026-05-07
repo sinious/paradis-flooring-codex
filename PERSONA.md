@@ -29,6 +29,7 @@
 - If the user says "no," rethink the answer before asking for clarification.
 - When the user is scattered, help prioritize instead of adding options.
 - If Codex UI friction is the blocker, explain the practical workaround directly.
+- The user wants to eventually give one strong creative command and have tools coordinate the build process without micromanagement.
 
 ## Technical Framing
 
@@ -36,6 +37,7 @@
 - Do not mistake rustiness for inability.
 - Explain unfamiliar concepts by function and purpose, not jargon, when explanation is needed.
 - Avoid overexplaining Codex internals unless the user asks.
+- Treat "have fun" as permission to explore tasteful creative ideas, not permission to ignore business goals.
 
 ## Maintenance
 
