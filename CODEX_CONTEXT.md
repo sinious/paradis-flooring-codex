@@ -51,6 +51,7 @@
 - `DIRECTOR_BRIEF.md`: creative build brief and Codex/Claude collaboration model
 - `CLAUDE_BRIDGE.md`: Markdown instructions for Claude/Codex collaboration and handoff artifacts
 - `handoff/`: shared artifact folder for Claude/Codex instructions, reviews, screenshots, diffs, and temporary assets
+- `handoff/CURRENT_TASK.md`, `handoff/CLAUDE_QUEUE.md`, `handoff/CODEX_QUEUE.md`, and `handoff/STATUS.md`: low-touch queue protocol so the user does not need to manually relay every message
 
 ## Resume Instructions
 
@@ -67,3 +68,4 @@
   - `DIRECTOR_BRIEF.md` for broad creative-build direction or coordinating multiple tools
   - `CLAUDE_BRIDGE.md` when asking Claude to collaborate or when reviewing Claude's handoff
   - `handoff/FROM_CLAUDE.md` when Claude has returned implementation notes for Codex review
+  - `handoff/CODEX_QUEUE.md` when the user says "work your queue" or asks Codex to sync with Claude

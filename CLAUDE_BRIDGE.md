@@ -13,6 +13,7 @@ The goal is to let Claude contribute senior implementation/code polish while Cod
 - Do not let both tools freely edit the same live folder at the same time.
 - Exchange artifacts through Markdown, screenshots, diffs, and copied files.
 - The user should not need to manually explain the same context repeatedly.
+- Use the queue files in `handoff/` so the user does not have to act as the message bus.
 
 ## Roles
 
@@ -162,6 +163,10 @@ If using file handoff, use:
 
 ```text
 handoff/
+  CURRENT_TASK.md
+  CLAUDE_QUEUE.md
+  CODEX_QUEUE.md
+  STATUS.md
   TO_CLAUDE.md
   FROM_CLAUDE.md
   CODEX_ART_REVIEW.md
@@ -171,6 +176,64 @@ handoff/
 ```
 
 This project now includes that folder structure. Use `handoff/TO_CLAUDE.md` for outbound instructions and `handoff/FROM_CLAUDE.md` for Claude's return notes.
+
+## Queue Protocol
+
+- `CURRENT_TASK.md`: active project objective and success criteria.
+- `CLAUDE_QUEUE.md`: Codex/user instructions for Claude's next implementation pass.
+- `CODEX_QUEUE.md`: Claude/user requests for Codex art/copy/brand review.
+- `STATUS.md`: current owner, last action, next action, and blockers.
+
+## Plain English For Claude
+
+Claude: this is not a complicated automation system. It is a shared mailbox made of Markdown files.
+
+When the user says "work your queue," do this:
+
+1. Read `handoff/STATUS.md`.
+2. Read `handoff/CURRENT_TASK.md`.
+3. Read `handoff/CLAUDE_QUEUE.md`.
+4. Do the implementation work in your own workspace.
+5. Write your results to `handoff/FROM_CLAUDE.md`.
+6. Write your questions/requests for Codex to `handoff/CODEX_QUEUE.md`.
+7. Update `handoff/STATUS.md` so the current owner is `Codex`.
+
+Codex will then read `handoff/CODEX_QUEUE.md`, perform art/copy/brand review, update `handoff/CODEX_ART_REVIEW.md`, write the next implementation instructions to `handoff/CLAUDE_QUEUE.md`, and set `STATUS.md` owner back to `Claude`.
+
+The user should not need to restate the project context every time.
+
+When Claude finishes a pass:
+
+- Update `FROM_CLAUDE.md`.
+- Update `CODEX_QUEUE.md` with exact questions for Codex.
+- Update `STATUS.md` so owner is `Codex`.
+
+When Codex finishes a pass:
+
+- Update `CODEX_ART_REVIEW.md`.
+- Update `CLAUDE_QUEUE.md` with exact next implementation directions.
+- Update `STATUS.md` so owner is `Claude`.
+
+## Copy/Paste Startup For Claude
+
+```text
+Claude, work your queue.
+
+Read:
+- CLAUDE_BRIDGE.md
+- handoff/STATUS.md
+- handoff/CURRENT_TASK.md
+- handoff/CLAUDE_QUEUE.md
+
+You are the senior developer. Codex is art director, copywriter, branding, and marketing.
+
+Do the implementation work requested in CLAUDE_QUEUE.md. When done:
+- update handoff/FROM_CLAUDE.md with what changed
+- update handoff/CODEX_QUEUE.md with what Codex should review or decide
+- update handoff/STATUS.md and set Current Owner to Codex
+
+Do not make the user manually translate between you and Codex. Use the queue files.
+```
 
 ## Automation Goal
 
