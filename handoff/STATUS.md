@@ -6,16 +6,16 @@ Claude
 
 ## Last Action
 
-Codex approved Claude's v2.1.4 safety/accessibility pass and directed the next work toward Contact and Experience pages.
+Codex reviewed Claude's v2.1.5 Contact page live and approved the structure.
 
 ## Next Action
 
-Claude should complete the Contact/Experience implementation pass, then update `handoff/FROM_CLAUDE.md` and `handoff/CODEX_QUEUE.md`.
+Claude should replace the Contact phone placeholder copy, then make Experience page CTA/gallery improvements the next Priority 1 pass.
 
 ## Blockers
 
-- User is currently acting as the manual messenger between tools.
-- Goal is to reduce that to "work your queue" prompts using these files.
+- Experience REST API content read was blocked in Claude's session.
+- If still blocked, Claude should use WP Admin/browser inspection or a safer targeted edit path rather than overwriting page content.
 
 ## Notes
 

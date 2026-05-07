@@ -8,11 +8,11 @@ Codex
 
 When Claude updates `handoff/FROM_CLAUDE.md`, Codex should review:
 
-1. Contact page visual hierarchy and CTA clarity.
-2. Experience page proof/gallery quality.
-3. Whether copy is premium, concise, and contact-forward.
-4. Whether any effects help or distract.
-5. Whether any factual claims need confirmation.
+1. Whether Contact replacement copy solved the missing-phone problem.
+2. Whether Experience CTA band improves conversion without disrupting gallery proof.
+3. Whether Experience gallery order/crops feel more premium while staying real-photo-first.
+4. Whether mobile Contact and Experience remain clean at approximately 390x844.
+5. Whether any factual claims still need client/user confirmation.
 
 ## Output Required
 

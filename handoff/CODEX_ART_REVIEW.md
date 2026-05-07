@@ -87,3 +87,29 @@
 - Bottom CTA/footer: strong. Calm, polished, and contact-forward.
 - Services page: dark hero weight is good. Copy is plausible and layout feels professional.
 - About page: visually strong. Main copy is readable and grounded, but final factual claims need owner/client confirmation.
+
+## Contact Page Review: v2.1.5
+
+- Verdict: approve structure and visual direction.
+- The dark hero, form-first layout, 60/40 split, right-column rhythm, and reassurance strip fit the brand.
+- The page feels premium and direct without adding filler.
+- The WPForms visual style is acceptable for now; revisit only if it looks unstyled after plugin/front-end states are fully loaded.
+
+## Contact Copy Direction
+
+- Replace the `Prefer to Call?` placeholder block. Without a real phone number, it calls attention to missing information.
+- Preferred replacement:
+  - Heading: `What happens next?`
+  - Copy: `Send the form and we’ll follow up with next steps, timing, and an estimate path within 1 business day.`
+- Alternative if the phone block must remain:
+  - Heading: `Prefer to talk?`
+  - Copy: `Send the form first so we have the project details. We’ll follow up with the best next step.`
+- Do not use `Phone number available on request` on a client-facing page unless explicitly approved by the client.
+
+## Experience Page Direction
+
+- Yes: Experience page CTA band and gallery order should be Priority 1 next round.
+- Preserve the Meow Gallery shortcode and avoid destructive content overwrites.
+- Add a bottom CTA band after the gallery if technically safe.
+- Gallery should stay real-photo-first. Lead with strongest sunlit/refinished-floor images and reduce hallway/doorframe-heavy first impressions.
+- If REST API content read is blocked, use WP Admin/browser inspection or a safer targeted edit path rather than forcing an overwrite.
