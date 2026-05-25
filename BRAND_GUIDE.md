@@ -2,8 +2,8 @@
 
 ## Active References
 
-- Primary source-of-truth mockup: `concepts/concept-10.png`
-- Source PDF distilled here: `concepts/Paradis-Flooring_Brand-Guide.pdf`
+- Primary source-of-truth mockup: `concepts/concept-2.png`
+- Active hero source: `concepts/hero.png`
 
 ## Brand Strategy
 

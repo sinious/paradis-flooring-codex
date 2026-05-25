@@ -6,14 +6,14 @@
 
 ## Current State
 
-- Starting from a `twentytwentyfive` copy
-- Current build reference: `concepts/concept-10.png`
-- Hero asset available: `concepts/concept-10-hero.webp`
+- Starting from an earlier Twenty Twenty-Five copy that has now been heavily stripped down
+- Current build reference: `concepts/concept-2.png`
+- Hero asset available: `concepts/hero.png`
 - Canonical brand/design reference: `BRAND_GUIDE.md`
 - Typography constraint: Google Fonts only
 - `Paradis Flooring Codex` is activated in local WordPress
 - `templates/front-page.html` now drives the homepage
-- Front page uses the uploaded hero image at `/wp-content/uploads/2026/05/concept-10-hero.webp`
+- Front page hero now points at the local theme asset `concepts/hero.png`
 - Front page uses uploaded real flooring images from `/wp-content/uploads/2026/05/paradis_flooring_*.webp`
 - The hero was adjusted to fit the higher-resolution generated hero image as a background field with overlay copy in the wall area
 - WordPress/FSE docs were distilled into `WORDPRESS_FSE.md`; use it for future FSE/theme.json/template decisions
@@ -21,7 +21,7 @@
 - `parts/header.html` and `parts/footer.html` were replaced with Paradis-specific block template parts for inner pages
 - Default Twenty Twenty-Five footer/header pattern references are no longer used by the main page templates
 - `templates/front-page.html` keeps the homepage custom: no normal header, custom hero/body, and a minimal copyright footer
-- `functions.php` enqueues `style.css` directly because there is no active minification/build step updating `style.min.css`
+- `functions.php` enqueues `style.css` directly and the old minified build workflow was removed
 - Google Fonts currently enqueued: `Inter` and `Playfair Display`
 - Theme metadata in `style.css` identifies the theme as `Paradis Flooring Codex`
 - `.gitignore` now blocks common local secrets and SSH key filenames

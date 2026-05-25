@@ -22,14 +22,11 @@ Load additional context files when the task calls for them:
 - `IMPLEMENTATION_NOTES.md` when resuming implementation, reviewing prior build decisions, or recording technical decisions
 - `CODEX_RULES.md` for safe operating boundaries and permission warm-up commands
 - `GIT_CONTEXT.md` for GitHub remote, SSH behavior, commits, pushes, and repo safety
-- `DIRECTOR_BRIEF.md` for multi-tool creative direction, agent roles, competitor-aware site briefs, and "have fun but serve the goal" guidance
-- `CLAUDE_BRIDGE.md` for Claude/Codex handoff instructions, artifact contracts, and collaboration protocol
-- `handoff/` for active Claude/Codex handoff artifacts, screenshots, diffs, and reviews
-- `handoff/CODEX_QUEUE.md` when Codex is asked to work its queue or continue Claude collaboration
 
 ## Working Rules
 
-- Work only in the real local project folder.
+- Work only in this Codex project folder unless the user explicitly points to another path.
+- Codex project root: `C:\Work\wamp64\www\client\wp-content\themes\paradis-flooring-codex`
 - Follow `CODEX_RULES.md` for scope, safety, and permission behavior.
 - Favor direct filesystem and repo-aware implementation help.
 - Avoid sandbox/setup recommendations unless explicitly requested.

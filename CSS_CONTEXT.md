@@ -12,7 +12,7 @@
 ## Current Front-Page Notes
 
 - `front-page.html` hides the normal header via `.home .wp-site-blocks > header`
-- Hero uses the uploaded `concept-10-hero.webp` as a full background image
+- Hero uses `concepts/hero.png` as the full background image
 - Hero copy must stay constrained to the left wall area of that image
 - Below tablet width, hero copy needs an explicit max-width so block columns do not make it too narrow
 - Do not trust full-page browser screenshots alone for this page; verify by viewport scrolling when background images are involved

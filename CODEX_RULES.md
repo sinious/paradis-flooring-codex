@@ -4,6 +4,8 @@
 
 - Work only inside this project unless the user explicitly points to another path.
 - Project root: `C:\Work\wamp64\www\client\wp-content\themes\paradis-flooring-codex`
+- This is the only folder assigned to the current Codex project.
+- Do not switch to or edit `C:\Work\wamp64\www\client\wp-content\themes\paradis-flooring` unless the user explicitly asks for that path in the current task.
 - Related WordPress paths are allowed only when directly needed for this project:
   - `C:\Work\wamp64\www\client\wp-content\uploads`
   - `C:\Work\wamp64\www\client\wp-content\plugins`

@@ -6,9 +6,8 @@
 
 ## Active References
 
-- Primary concept: `concepts/concept-10.png`
-- Hero asset: `concepts/concept-10-hero.webp`
-- Active uploaded hero URL: `/wp-content/uploads/2026/05/concept-10-hero.webp`
+- Primary concept: `concepts/concept-2.png`
+- Hero asset: `concepts/hero.png`
 - Canonical brand rules: `BRAND_GUIDE.md`
 
 ## Scope
@@ -46,8 +45,7 @@
 
 ## Asset Use
 
-- Use `concepts/concept-10-hero.webp` as the homepage hero image if suitable in layout and quality
-- Current front page uses the uploaded hero from `/wp-content/uploads/2026/05/concept-10-hero.webp`
+- Use `concepts/hero.png` as the homepage hero image
 - Current gallery uses real uploaded flooring images from `/wp-content/uploads/2026/05/paradis_flooring_*.webp`
 - Treat gallery imagery in the bitmap concept as structure and mood reference when final assets are not explicitly provided
 

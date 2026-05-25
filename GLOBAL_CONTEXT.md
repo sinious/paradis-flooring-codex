@@ -16,27 +16,30 @@ Start with:
 C:\Work\Codex\contexts\paradis-flooring\README.md
 ```
 
-## Active Real Theme
+## Important Path Boundary
 
-Claude is currently working in:
-
-```text
-C:\Work\wamp64\www\client\wp-content\themes\paradis-flooring
-```
-
-Active Claude/Codex handoff files are in:
-
-```text
-C:\Work\wamp64\www\client\wp-content\themes\paradis-flooring\HANDOFF.md
-C:\Work\wamp64\www\client\wp-content\themes\paradis-flooring\handoff\
-```
-
-## Current Codex Test Theme
-
-This folder remains the Codex test/context source:
+This Codex project is assigned to:
 
 ```text
 C:\Work\wamp64\www\client\wp-content\themes\paradis-flooring-codex
 ```
 
-Do not assume it is the active production theme.
+Codex should treat this as the working root.
+
+Other theme folders are reference/handoff only unless the user explicitly redirects Codex for a specific task.
+
+Reference theme path:
+
+```text
+C:\Work\wamp64\www\client\wp-content\themes\paradis-flooring
+```
+
+## Current Codex Theme
+
+This folder remains the Codex project root:
+
+```text
+C:\Work\wamp64\www\client\wp-content\themes\paradis-flooring-codex
+```
+
+Do not switch project roots based on app suggestions or external tool wording.

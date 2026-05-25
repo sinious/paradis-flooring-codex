@@ -3,12 +3,12 @@
 ## Project
 
 - Project root: `C:\Work\wamp64\www\client\wp-content\themes\paradis-flooring-codex`
-- Theme base: copy of `twentytwentyfive`
-- Workspace intent: use this real local theme folder as the Codex project/workspace
-- This folder is reserved for Codex work
+- Theme base: custom block theme derived from an earlier Twenty Twenty-Five copy
+- Workspace intent: use this exact folder as the Codex project/workspace
+- This folder is reserved for Codex work and is the only folder assigned to this Codex project
 - Reusable Codex context has been copied to global path: `C:\Work\Codex\contexts\paradis-flooring`
 - Start future context loading from `C:\Work\Codex\contexts\paradis-flooring\README.md`
-- Claude's active real theme folder is `C:\Work\wamp64\www\client\wp-content\themes\paradis-flooring`
+- Other theme folders, including `C:\Work\wamp64\www\client\wp-content\themes\paradis-flooring`, are reference/handoff folders only unless the user explicitly asks Codex to work there
 
 ## Goal
 
@@ -19,25 +19,25 @@
 
 ## Workflow Preferences
 
-- Work in the real local project folder only
+- Work in the assigned Codex project folder only unless explicitly redirected
 - Prefer direct filesystem access and real terminal behavior
 - Prefer concise answers and factual responses
 - Avoid sandbox/setup guidance unless explicitly requested
 - Favor explicit file paths and repo-aware implementation help
 - Do not recommend or encourage Agent sandbox / backup sandbox for this workflow
-- The right-side Codex panel is not a normal filesystem tree; reference files by project-relative paths such as `concepts/concept-10.png`
+- The right-side Codex panel is not a normal filesystem tree; reference files by project-relative paths such as `concepts/concept-2.png`
 
 ## Current Status
 
 - Project is attached in Codex using the existing local folder
+- Assigned Codex workspace: `C:\Work\wamp64\www\client\wp-content\themes\paradis-flooring-codex`
 - This folder is now a Git repository with private GitHub remote `git@github.com:sinious/paradis-flooring-codex.git`
 - Initial theme work and context files have been committed and pushed to GitHub
 - `PERSONA.md` exists and should be used as communication guidance
-- Current source-of-truth concept image: `concepts/concept-10.png`
-- `concepts/concept-10.png` is sufficient to build a strong FSE front page implementation
+- Current source-of-truth concept image: `concepts/concept-2.png`
+- Active hero image: `concepts/hero.png`
 - Additional design decisions will still need to be inferred for mobile behavior, interactions, exact fonts/colors, and inner pages
-- `concepts/Paradis-Flooring_Brand-Guide.pdf` has been distilled into `BRAND_GUIDE.md`
-- `BRAND_GUIDE.md` should be treated as the canonical reusable brand/context file rather than the raw PDF
+- `BRAND_GUIDE.md` should be treated as the canonical reusable brand/context file
 - No dedicated brand guide or implementation notes existed before this setup
 
 ## Context Files
@@ -51,10 +51,6 @@
 - `WORDPRESS_FSE.md`: distilled WordPress block theme/FSE docs and project-specific implementation rules
 - `CODEX_RULES.md`: safe operating boundaries and permission warm-up commands
 - `GIT_CONTEXT.md`: GitHub remote, SSH fix, push workflow, and secret-safety notes
-- `DIRECTOR_BRIEF.md`: creative build brief and Codex/Claude collaboration model
-- `CLAUDE_BRIDGE.md`: Markdown instructions for Claude/Codex collaboration and handoff artifacts
-- `handoff/`: shared artifact folder for Claude/Codex instructions, reviews, screenshots, diffs, and temporary assets
-- `handoff/CURRENT_TASK.md`, `handoff/CLAUDE_QUEUE.md`, `handoff/CODEX_QUEUE.md`, and `handoff/STATUS.md`: low-touch queue protocol so the user does not need to manually relay every message
 
 ## Resume Instructions
 
@@ -68,7 +64,3 @@
   - `TEMPLATE_CONTEXT.md` for FSE template-building work
   - `WORDPRESS_FSE.md` for WordPress block theme/FSE mechanics
   - `GIT_CONTEXT.md` for Git commits, pushes, remotes, SSH, or repo safety
-  - `DIRECTOR_BRIEF.md` for broad creative-build direction or coordinating multiple tools
-  - `CLAUDE_BRIDGE.md` when asking Claude to collaborate or when reviewing Claude's handoff
-  - `handoff/FROM_CLAUDE.md` when Claude has returned implementation notes for Codex review
-  - `handoff/CODEX_QUEUE.md` when the user says "work your queue" or asks Codex to sync with Claude
