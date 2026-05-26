@@ -39,6 +39,16 @@ Load additional context files when the task calls for them:
 - Do not invent a new brand direction.
 - Do not recommend Agent sandbox / backup sandbox for this workflow.
 
+## Codex / Antigravity Collaboration
+
+- Codex is the concept, design, theme, CSS, template, review, and Git quality lead.
+- Google Antigravity may act as a fast junior WordPress developer/operator.
+- Antigravity can handle WP admin, content, media library, page setup, theme activation, and plugin/settings checks when directed.
+- Antigravity should execute Codex direction, not reinterpret the design or invent new layout/brand direction.
+- Codex reviews the browser result and Git diff before work is treated as final.
+- If outputs conflict, preserve the work in Git and compare visually; Codex makes final concept/theme decisions.
+- The goal is seamless co-work: Codex directs and reviews, Antigravity executes WP tasks, Git protects rollback and comparison.
+
 ## Design Source of Truth
 
 Current homepage design source of truth:

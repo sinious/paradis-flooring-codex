@@ -7,7 +7,7 @@ Description: Custom WordPress block theme for the Paradis Flooring front page bu
 Requires at least: 6.7
 Tested up to: 6.9
 Requires PHP: 7.2
-Version: 1.10
+Version: 1.11
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: paradis-flooring-codex
@@ -917,6 +917,11 @@ li {
 		overflow-x: auto;
 		padding-bottom: 8px;
 		scroll-snap-type: x proximity;
+		scrollbar-width: none;
+	}
+
+	.pfc-gallery.has-nested-images::-webkit-scrollbar {
+		display: none;
 	}
 
 	.pfc-gallery.has-nested-images figure.wp-block-image:not(#individual-image) {
