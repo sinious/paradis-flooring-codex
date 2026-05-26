@@ -8,6 +8,7 @@ For any task in this repository, load these files first:
 1. `PERSONA.md`
 2. `CODEX_CONTEXT.md`
 3. `CODEX_RULES.md`
+4. `TODO.md`
 
 These files are the baseline context for all work in this project.
 
@@ -32,7 +33,50 @@ Load additional context files when the task calls for them:
 - Avoid sandbox/setup recommendations unless explicitly requested.
 - Keep answers concise and factual by default.
 - Read the minimum additional context needed for the task, but always read the baseline files above.
+- Summarize intended file changes before major edits.
+- Make small, reversible changes.
+- Preserve the current design direction unless explicitly told otherwise.
+- Do not invent a new brand direction.
 - Do not recommend Agent sandbox / backup sandbox for this workflow.
+
+## Design Source of Truth
+
+Current homepage design source of truth:
+`concepts/front-page.png`
+
+Current subpage design source of truth:
+`concepts/sub-page.png`
+
+Homepage hero image:
+`concepts/hero-new-2.png`
+
+Service/subpage hero image:
+`concepts/service-page-hero.png`
+
+Original logo source:
+`concepts/logo.jpg`
+
+Current treated homepage logo:
+`concepts/logo-treated.png`
+
+## Key WordPress Files
+
+Homepage template:
+`templates/front-page.html`
+
+Gallery page template:
+`templates/page-gallery.html`
+
+Published gallery permalink:
+`http://localhost/client/gallery/`
+
+## Current Site Behavior
+
+- Mobile homepage uses hamburger menu.
+- Mobile homepage gallery shows 3 images.
+- Desktop homepage gallery shows 6 images.
+- Footer is Facebook-only.
+
 
 ## Maintenance
 

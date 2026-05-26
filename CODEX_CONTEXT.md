@@ -32,11 +32,14 @@
 - Project is attached in Codex using the existing local folder
 - Assigned Codex workspace: `C:\Work\wamp64\www\client\wp-content\themes\paradis-flooring-codex`
 - This folder is now a Git repository with private GitHub remote `git@github.com:sinious/paradis-flooring-codex.git`
-- Initial theme work and context files have been committed and pushed to GitHub
+- Current branch: `main`
+- Latest pushed rebuild commit: `86dc5c8` (`Rebuild Paradis front page and gallery`)
 - `PERSONA.md` exists and should be used as communication guidance
 - Current source-of-truth concept image: `concepts/concept-2.png`
 - Active hero image: `concepts/hero.png`
-- Additional design decisions will still need to be inferred for mobile behavior, interactions, exact fonts/colors, and inner pages
+- Homepage rebuild is live locally at `http://localhost/client/`
+- Gallery page has been created and published at `http://localhost/client/gallery/`
+- Additional design decisions still remain for deeper inner-page systems and final non-FPO details
 - `BRAND_GUIDE.md` should be treated as the canonical reusable brand/context file
 - No dedicated brand guide or implementation notes existed before this setup
 

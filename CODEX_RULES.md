@@ -73,3 +73,5 @@ These are safe commands Codex may run to establish session approvals for normal 
 - Prefer direct, factual status updates.
 - Record durable project decisions in the appropriate context file.
 - If Git/SSH fails because a passphrase prompt cannot be shown inside Codex, use the Windows OpenSSH project config documented in `GIT_CONTEXT.md`.
+- Prefer Python for local automation helpers when practical; Python is installed and in PATH for this project workflow.
+- Avoid creating temporary PHP helper files when Python can do the same local automation cleanly.

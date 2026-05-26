@@ -7,15 +7,24 @@
 ## Current State
 
 - Starting from an earlier Twenty Twenty-Five copy that has now been heavily stripped down
-- Current build reference: `concepts/concept-2.png`
-- Hero asset available: `concepts/hero.png`
+- Current homepage build reference: `concepts/front-page.png`
+- Current subpage build reference: `concepts/sub-page.png`
+- Homepage hero reference/source asset available: `concepts/hero-new-2.png`
+- Original logo source of truth kept at `concepts/logo.jpg`
+- Current treated homepage logo asset: `concepts/logo-treated.png`
 - Canonical brand/design reference: `BRAND_GUIDE.md`
 - Typography constraint: Google Fonts only
 - `Paradis Flooring Codex` is activated in local WordPress
-- `templates/front-page.html` now drives the homepage
-- Front page hero now points at the local theme asset `concepts/hero.png`
-- Front page uses uploaded real flooring images from `/wp-content/uploads/2026/05/paradis_flooring_*.webp`
-- The hero was adjusted to fit the higher-resolution generated hero image as a background field with overlay copy in the wall area
+- `templates/front-page.html` provides the homepage shell; homepage section content lives in the WordPress page editor
+- `templates/page-gallery.html` now exists for the Gallery page
+- Site-used concept images should be uploaded to the WordPress Media Library before being placed in page content
+- Homepage/subpage hero, logo, and six gallery cutouts were registered as WordPress Media Library attachments in `/wp-content/uploads/2026/05/`
+- Homepage and subpages use editable WordPress block content for copy, imagery, and section bodies
+- Theme template files should define shells and reusable styling only; do not hardcode page-specific content in template files
+- Mobile homepage now swaps the full nav for a hamburger/details menu
+- Mobile homepage gallery is intentionally limited to the first 3 gallery images; desktop keeps 6
+- Footer social is now Facebook-only and points to the provided client profile
+- A published WordPress page now exists at `http://localhost/client/gallery/`
 - WordPress/FSE docs were distilled into `WORDPRESS_FSE.md`; use it for future FSE/theme.json/template decisions
 - `theme.json` palette and font presets were updated from Twenty Twenty-Five defaults to the Paradis brand palette plus Google Font family presets (`Inter`, `Playfair Display`)
 - `parts/header.html` and `parts/footer.html` were replaced with Paradis-specific block template parts for inner pages
@@ -30,12 +39,27 @@
 
 - Local URL checked in browser: `http://localhost/client/`
 - Active front page renders from the Codex theme
-- Desktop first viewport shows hero plus the top of the value strip
-- Gallery, CTA band, and footer render below the hero
-- Inner `Services` page was checked and now shows the Paradis header with simple navigation
+- Desktop homepage, Gallery, Experience, Contact, lower CTA, footer, and mobile menu behavior were browser-checked
+- Mobile homepage was browser-checked after nav, hero, and gallery adjustments
+- Inner `Services` page was browser-checked against the shared subpage concept direction
+- Gallery page permalink was created and published in local WordPress
 - Full-page screenshots can visually repeat the hero due browser capture stitching; scroll-by-scroll verification showed the actual page order is correct
 - Browser plugin/local browser workflow worked after Node was updated to v24.15.0/npm 11.12.1
 - GitHub push succeeded after setting this project to use Windows OpenSSH for Git SSH commands
+
+## Git State
+
+Repo branch:
+`main`
+
+Latest pushed rebuild commit:
+`86dc5c8`
+
+## Next Likely Focus
+
+- Refine the new Gallery page design beyond the initial masonry build
+- Build or restyle additional inner pages: Services, About, Contact, Experience
+- Replace any remaining FPO icon treatments if better assets or clearer direction arrive
 
 ## Track Here
 
