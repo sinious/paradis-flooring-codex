@@ -31,6 +31,7 @@
 
 ## Safe Git Workflow
 
+- Read this file before checking, staging, committing, or pushing. Do not rely on remembered Git setup.
 - Use normal Git commands inside the project folder.
 - Commit context-file updates when they materially improve future handoff.
 - Push after meaningful commits when the user asks to save or publish work.

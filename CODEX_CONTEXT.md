@@ -33,7 +33,7 @@
 - Assigned Codex workspace: `C:\Work\wamp64\www\client\wp-content\themes\paradis-flooring-codex`
 - This folder is now a Git repository with private GitHub remote `git@github.com:sinious/paradis-flooring-codex.git`
 - Current branch: `main`
-- Latest pushed rebuild commit: `86dc5c8` (`Rebuild Paradis front page and gallery`)
+- Latest pushed commit: `fa21ee8` (`Document collaboration flow and polish mobile gallery`)
 - `PERSONA.md` exists and should be used as communication guidance
 - Current source-of-truth concept image: `concepts/concept-2.png`
 - Active hero image: `concepts/hero.png`
@@ -54,6 +54,12 @@
 - `WORDPRESS_FSE.md`: distilled WordPress block theme/FSE docs and project-specific implementation rules
 - `CODEX_RULES.md`: safe operating boundaries and permission warm-up commands
 - `GIT_CONTEXT.md`: GitHub remote, SSH fix, push workflow, and secret-safety notes
+
+## Memory / Context Rule
+
+- Do not rely on remembered project state for specialty work.
+- For Git tasks, read `GIT_CONTEXT.md` before checking, staging, committing, or pushing.
+- For design/CSS/template/WordPress tasks, read the relevant specialized context before acting.
 
 ## Resume Instructions
 

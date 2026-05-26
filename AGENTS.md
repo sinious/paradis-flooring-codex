@@ -24,11 +24,14 @@ Load additional context files when the task calls for them:
 - `CODEX_RULES.md` for safe operating boundaries and permission warm-up commands
 - `GIT_CONTEXT.md` for GitHub remote, SSH behavior, commits, pushes, and repo safety
 
+Before acting in a specialty area, read that specialty context file first. Do not rely on memory from prior turns.
+
 ## Working Rules
 
 - Work only in this Codex project folder unless the user explicitly points to another path.
 - Codex project root: `C:\Work\wamp64\www\client\wp-content\themes\paradis-flooring-codex`
 - Follow `CODEX_RULES.md` for scope, safety, and permission behavior.
+- For Git tasks, read `GIT_CONTEXT.md` before checking, staging, committing, or pushing.
 - Favor direct filesystem and repo-aware implementation help.
 - Avoid sandbox/setup recommendations unless explicitly requested.
 - Keep answers concise and factual by default.

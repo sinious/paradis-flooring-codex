@@ -99,10 +99,11 @@ Last edited file:
 
 Current version:
 
-- `1.9`
+- `1.11`
 
 Recent changes:
 
+- Hid the mobile homepage thumbnail-strip scrollbar while preserving horizontal scrolling.
 - Reduced desktop logo scale: `.pfc-brand-logo { width: min(230px, 74%); }`
 - Reduced mobile logo scale: `.pfc-brand-logo { width: min(176px, 46vw); }`
 - Home `.pfc-gallery` changed to a compact six-column thumbnail strip on desktop.
