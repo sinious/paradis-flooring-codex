@@ -54,3 +54,41 @@ if ( ! function_exists( 'paradis_flooring_codex_enqueue_google_fonts' ) ) :
 	}
 endif;
 add_action( 'wp_enqueue_scripts', 'paradis_flooring_codex_enqueue_google_fonts' );
+
+if ( ! function_exists( 'paradis_flooring_codex_gallery_links' ) ) :
+	/**
+	 * Link homepage gallery thumbnails to the full Gallery page.
+	 *
+	 * @return void
+	 */
+	function paradis_flooring_codex_gallery_links() {
+		if ( ! is_front_page() ) {
+			return;
+		}
+
+		wp_register_script(
+			'paradis-flooring-codex-gallery-links',
+			false,
+			array(),
+			wp_get_theme()->get( 'Version' ),
+			true
+		);
+
+		wp_enqueue_script( 'paradis-flooring-codex-gallery-links' );
+
+		wp_add_inline_script(
+			'paradis-flooring-codex-gallery-links',
+			"document.querySelectorAll('.pfc-gallery figure img').forEach(function (img) {
+				if (img.closest('a')) {
+					return;
+				}
+				var link = document.createElement('a');
+				link.href = '/client/gallery/';
+				link.setAttribute('aria-label', 'View full flooring gallery');
+				img.parentNode.insertBefore(link, img);
+				link.appendChild(img);
+			});"
+		);
+	}
+endif;
+add_action( 'wp_enqueue_scripts', 'paradis_flooring_codex_gallery_links' );

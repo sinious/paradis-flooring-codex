@@ -34,14 +34,18 @@
 - Google Fonts currently enqueued: `Inter` and `Playfair Display`
 - Theme metadata in `style.css` identifies the theme as `Paradis Flooring Codex`
 - `.gitignore` now blocks common local secrets and SSH key filenames
+- `style.css` version `1.16` adds a premium polish pass: warmer page background, richer brown logo panel, refined CTA depth, subtle image/card radius and shadows, cleaner gallery hover behavior, corrected homepage hero stack alignment, and a non-scroll mobile homepage gallery grid.
+- `functions.php` links homepage gallery thumbnails to `/client/gallery/` on the front end.
 
 ## Verification Notes
 
 - Local URL checked in browser: `http://localhost/client/`
 - Active front page renders from the Codex theme
-- Desktop homepage, Gallery, Experience, Contact, lower CTA, footer, and mobile menu behavior were browser-checked
+- Desktop homepage, Services, Gallery, Experience, Contact, lower CTA, footer, and mobile menu behavior were browser-checked
 - Mobile homepage was browser-checked after nav, hero, and gallery adjustments
 - Inner `Services` page was browser-checked against the shared subpage concept direction
+- Desktop and mobile homepage/Services/Gallery were browser-checked after the `1.12` polish pass.
+- Mobile homepage gallery grid and thumbnail links were browser-checked after the `1.16` update.
 - Gallery page permalink was created and published in local WordPress
 - Full-page screenshots can visually repeat the hero due browser capture stitching; scroll-by-scroll verification showed the actual page order is correct
 - Browser plugin/local browser workflow worked after Node was updated to v24.15.0/npm 11.12.1

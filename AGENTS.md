@@ -46,8 +46,11 @@ Before acting in a specialty area, read that specialty context file first. Do no
 
 - Codex is the concept, design, theme, CSS, template, review, and Git quality lead.
 - Google Antigravity may act as a fast junior WordPress developer/operator.
-- Antigravity can handle WP admin, content, media library, page setup, theme activation, and plugin/settings checks when directed.
+- Codex and Antigravity may share overall content direction, but each keeps its own safe isolated implementation/template area unless the user explicitly coordinates a handoff.
+- Antigravity can handle WP admin, content, media library, page setup, theme activation, and plugin/settings checks when directed by the user.
 - Antigravity should execute Codex direction, not reinterpret the design or invent new layout/brand direction.
+- Codex must not use wp-admin to alter pages/content in a way that would overwrite or interfere with Antigravity's work unless the user explicitly approves that specific action.
+- If Antigravity needs to read Codex context, tell the user exactly what Antigravity should read. Do not assume Antigravity has read Codex files.
 - Codex reviews the browser result and Git diff before work is treated as final.
 - If outputs conflict, preserve the work in Git and compare visually; Codex makes final concept/theme decisions.
 - The goal is seamless co-work: Codex directs and reviews, Antigravity executes WP tasks, Git protects rollback and comparison.

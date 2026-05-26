@@ -99,10 +99,14 @@ Last edited file:
 
 Current version:
 
-- `1.11`
+- `1.16`
 
 Recent changes:
 
+- Mobile homepage gallery now uses a 2-column grid showing all six thumbnails; thumbnails link to the Gallery page.
+- Aligned the homepage hero headline, divider, body text, and CTA to one left edge.
+- Corrected hero typography scale, divider alignment, and CTA spacing on desktop/mobile.
+- Added premium visual polish: richer brown logo panel, subtle page warmth, refined CTA shadows, image/card radius, gallery hover treatment, and softer hero/image depth.
 - Hid the mobile homepage thumbnail-strip scrollbar while preserving horizontal scrolling.
 - Reduced desktop logo scale: `.pfc-brand-logo { width: min(230px, 74%); }`
 - Reduced mobile logo scale: `.pfc-brand-logo { width: min(176px, 46vw); }`

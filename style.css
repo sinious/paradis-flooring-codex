@@ -7,7 +7,7 @@ Description: Custom WordPress block theme for the Paradis Flooring front page bu
 Requires at least: 6.7
 Tested up to: 6.9
 Requires PHP: 7.2
-Version: 1.11
+Version: 1.16
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: paradis-flooring-codex
@@ -26,10 +26,14 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 	--pfc-footer: #1c1a18;
 	--pfc-footer-line: #5e564f;
 	--pfc-content: min(1180px, calc(100vw - 56px));
+	--pfc-shadow-soft: 0 22px 60px rgba(68, 35, 14, 0.12);
+	--pfc-shadow-image: 0 14px 34px rgba(45, 25, 12, 0.16);
 }
 
 body {
-	background: var(--pfc-paper);
+	background:
+		radial-gradient(circle at 20% 0%, rgba(98,49,17,0.055), transparent 34rem),
+		linear-gradient(180deg, #fffaf5 0%, #f8f3ed 100%);
 	color: var(--pfc-ink);
 	font-family: "Inter", sans-serif;
 }
@@ -39,7 +43,11 @@ a {
 	text-underline-offset: 0.18em;
 }
 
-:where(.wp-site-blocks *:focus) {
+:where(.wp-site-blocks *:focus:not(:focus-visible)) {
+	outline: none;
+}
+
+:where(.wp-site-blocks *:focus-visible) {
 	outline: 2px solid var(--pfc-brown);
 	outline-offset: 4px;
 }
@@ -103,7 +111,7 @@ li {
 }
 
 .home .pfc-split-hero {
-	grid-template-rows: 86px 104px minmax(370px, 28vw);
+	grid-template-rows: 86px 104px minmax(410px, 30vw);
 }
 
 .pfc-brand-panel {
@@ -114,15 +122,18 @@ li {
 	justify-content: center;
 	padding: 18px 26px;
 	background:
-		linear-gradient(140deg, rgba(255,255,255,0.08), rgba(255,255,255,0) 32%),
-		linear-gradient(180deg, #7a3b16 0%, var(--pfc-brown) 100%);
+		linear-gradient(140deg, rgba(255,255,255,0.13), rgba(255,255,255,0) 34%),
+		radial-gradient(circle at 50% 0%, rgba(255,255,255,0.12), transparent 18rem),
+		linear-gradient(180deg, #7d3b15 0%, var(--pfc-brown) 62%, #4f250b 100%);
 	color: #fff;
 	text-align: center;
+	box-shadow: inset -1px 0 0 rgba(255,255,255,0.12);
 }
 
 .pfc-brand-logo {
 	width: min(230px, 74%);
 	margin: 0 auto;
+	filter: drop-shadow(0 10px 18px rgba(31, 14, 4, 0.16));
 }
 
 .pfc-brand-logo img {
@@ -157,11 +168,18 @@ li {
 	letter-spacing: 0.08em;
 	text-decoration: none;
 	text-transform: uppercase;
+	transition: border-color 180ms ease, color 180ms ease, opacity 180ms ease;
 }
 
 .pfc-main-nav .is-current a {
 	border-color: var(--pfc-brown);
 	color: var(--pfc-brown);
+}
+
+.pfc-main-nav a:hover {
+	border-color: rgba(98,49,17,0.32);
+	color: var(--pfc-brown);
+	opacity: 0.92;
 }
 
 .pfc-mobile-nav {
@@ -178,11 +196,14 @@ li {
 	padding: 46px clamp(28px, 4vw, 50px) 34px;
 	background: linear-gradient(90deg, var(--pfc-paper) 0%, rgba(255,250,245,0.96) 100%);
 	border-right: 1px solid rgba(98,49,17,0.08);
+	box-shadow: 16px 0 38px rgba(98,49,17,0.06);
+	z-index: 2;
 }
 
 .home .pfc-hero-copy {
 	justify-content: flex-start;
-	padding-top: 26px;
+	padding-top: 34px;
+	padding-bottom: 42px;
 }
 
 .pfc-subpage-copy {
@@ -191,12 +212,15 @@ li {
 }
 
 .pfc-hero-title {
-	margin: 0;
+	max-width: 12.5ch;
+	margin: 0 !important;
 	font-family: "Playfair Display", serif;
-	font-size: clamp(2.35rem, 3vw, 3.15rem);
+	font-size: clamp(2.12rem, 2.55vw, 2.78rem);
 	font-weight: 500;
 	letter-spacing: 0;
 	line-height: 1.04;
+	color: #17100c;
+	text-align: left;
 }
 
 .pfc-subpage .pfc-hero-title {
@@ -211,7 +235,7 @@ li {
 
 .pfc-hero-rule {
 	width: 58px;
-	margin: 26px 0 20px;
+	margin: 22px 0 18px !important;
 	border-color: var(--pfc-brown);
 	border-width: 0 0 2px;
 }
@@ -221,13 +245,22 @@ li {
 	max-width: 31ch;
 	margin: 0;
 	color: #2b241f;
-	font-size: 0.98rem;
+	font-size: 0.94rem;
 	font-weight: 500;
-	line-height: 1.7;
+	line-height: 1.62;
 }
 
 .pfc-hero-actions {
-	margin-top: 26px;
+	margin-top: 30px;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	justify-content: flex-start !important;
+	text-align: left;
+}
+
+.pfc-hero-actions .wp-block-button {
+	margin-left: 0 !important;
+	margin-right: 0 !important;
 }
 
 .pfc-hero-image {
@@ -237,6 +270,7 @@ li {
 	height: 100%;
 	margin: 0;
 	overflow: hidden;
+	box-shadow: var(--pfc-shadow-soft);
 }
 
 .pfc-hero-image img {
@@ -245,6 +279,7 @@ li {
 	height: 100%;
 	object-fit: cover;
 	object-position: center center;
+	filter: saturate(1.04) contrast(1.03);
 }
 
 .pfc-button .wp-block-button__link {
@@ -252,17 +287,20 @@ li {
 	align-items: center;
 	justify-content: center;
 	min-width: 205px;
-	min-height: 52px;
+	min-height: 50px;
 	padding: 0.95rem 1.5rem;
 	border-radius: 0;
-	background: var(--pfc-brown);
+	background:
+		linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0) 42%),
+		var(--pfc-brown);
 	color: #fff;
 	font-size: 0.82rem;
 	font-weight: 800;
 	letter-spacing: 0.1em;
 	text-decoration: none;
 	text-transform: uppercase;
-	transition: background-color 180ms ease, transform 180ms ease;
+	box-shadow: 0 10px 24px rgba(98,49,17,0.2);
+	transition: background-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
 .pfc-button .wp-block-button__link::after,
@@ -275,6 +313,7 @@ li {
 
 .pfc-button .wp-block-button__link:hover {
 	background: var(--pfc-brown-dark);
+	box-shadow: 0 14px 30px rgba(98,49,17,0.25);
 	transform: translateY(-1px);
 }
 
@@ -302,6 +341,10 @@ li {
 	padding: 0 clamp(18px, 2vw, 28px);
 }
 
+.pfc-value-card:hover .pfc-value-icon::before {
+	transform: translateY(-2px);
+}
+
 .pfc-value-card:not(:last-child) {
 	border-right: 1px solid var(--pfc-line);
 }
@@ -325,6 +368,7 @@ li {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
+	transition: transform 180ms ease;
 }
 
 .pfc-value-card:nth-child(1) .pfc-value-icon::before {
@@ -422,6 +466,7 @@ li {
 	overflow: hidden;
 	background: #f3e6d8;
 	border: 1px solid var(--pfc-line);
+	border-radius: 4px;
 }
 
 .pfc-gallery .wp-block-image img,
@@ -431,6 +476,13 @@ li {
 	height: 100%;
 	aspect-ratio: 1.28;
 	object-fit: cover;
+	transition: filter 180ms ease, transform 220ms ease;
+}
+
+.pfc-gallery .wp-block-image:hover img,
+.pfc-gallery-expanded .wp-block-image:hover img {
+	filter: saturate(1.05) contrast(1.04);
+	transform: scale(1.018);
 }
 
 .pfc-gallery-expanded.has-nested-images {
@@ -449,6 +501,7 @@ li {
 
 .pfc-service-card {
 	padding-bottom: 14px;
+	box-shadow: 0 8px 20px rgba(45, 25, 12, 0.07);
 }
 
 .pfc-service-card > :where(*) {
@@ -540,7 +593,9 @@ li {
 
 .pfc-bottom-cta {
 	padding: 26px 0;
-	background: linear-gradient(90deg, #f2e6dc 0%, #fff8f1 100%);
+	background:
+		linear-gradient(90deg, #f2e6dc 0%, #fff8f1 100%),
+		radial-gradient(circle at 100% 50%, rgba(98,49,17,0.08), transparent 22rem);
 	border-top: 1px solid var(--pfc-line);
 	border-bottom: 1px solid var(--pfc-line);
 }
@@ -571,6 +626,8 @@ li {
 	border-radius: 50%;
 	color: transparent;
 	font-size: 0;
+	background: rgba(255,250,245,0.72);
+	box-shadow: 0 10px 24px rgba(98,49,17,0.12);
 }
 
 .pfc-chat-icon::before {
@@ -707,6 +764,7 @@ li {
 .pfc-gallery-masonry .wp-block-image {
 	break-inside: avoid;
 	margin: 0 0 14px;
+	box-shadow: var(--pfc-shadow-image);
 }
 
 .pfc-gallery-masonry img {
@@ -910,14 +968,10 @@ li {
 
 	.pfc-gallery.has-nested-images {
 		display: grid !important;
-		grid-auto-flow: column;
-		grid-auto-columns: minmax(118px, 34vw);
-		grid-template-columns: none;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
 		gap: 8px !important;
-		overflow-x: auto;
-		padding-bottom: 8px;
-		scroll-snap-type: x proximity;
-		scrollbar-width: none;
+		overflow: visible;
+		padding-bottom: 0;
 	}
 
 	.pfc-gallery.has-nested-images::-webkit-scrollbar {
@@ -925,11 +979,11 @@ li {
 	}
 
 	.pfc-gallery.has-nested-images figure.wp-block-image:not(#individual-image) {
-		scroll-snap-align: start;
+		display: block;
 	}
 
 	.pfc-gallery .wp-block-image img {
-		aspect-ratio: 1.15;
+		aspect-ratio: 1.18;
 	}
 
 	.pfc-gallery-expanded .wp-block-image img {
