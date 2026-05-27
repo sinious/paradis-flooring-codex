@@ -7,7 +7,7 @@ Description: Custom WordPress block theme for the Paradis Flooring front page bu
 Requires at least: 6.7
 Tested up to: 6.9
 Requires PHP: 7.2
-Version: 1.18
+Version: 1.19
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: paradis-flooring-codex
@@ -83,6 +83,7 @@ li {
 .pfc-gallery-masonry,
 .pfc-services-intro,
 .pfc-service-grid,
+.pfc-info-grid,
 .pfc-about-grid,
 .pfc-contact-grid,
 .pfc-default-page > .wp-block-post-content {
@@ -406,6 +407,7 @@ li {
 
 .pfc-work,
 .pfc-services-section,
+.pfc-about-section,
 .pfc-rich-section,
 .pfc-contact-grid {
 	padding-top: 26px;
@@ -569,6 +571,35 @@ li {
 	padding-left: 1.2rem;
 	color: #302924;
 	line-height: 1.7;
+}
+
+.pfc-info-grid {
+	display: grid !important;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 16px;
+}
+
+.pfc-info-card {
+	padding: 24px;
+	background: linear-gradient(180deg, #fffaf5 0%, #f4e9dd 100%);
+	border: 1px solid var(--pfc-line);
+	box-shadow: 0 12px 30px rgba(45, 25, 12, 0.06);
+}
+
+.pfc-info-card h3 {
+	margin: 0 0 10px;
+	color: var(--pfc-brown);
+	font-size: 0.82rem;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.pfc-info-card p {
+	margin: 0;
+	color: #302924;
+	font-size: 0.92rem;
+	line-height: 1.58;
 }
 
 .pfc-contact-grid {
@@ -1153,6 +1184,7 @@ li {
 	.pfc-value-grid-four,
 	.pfc-gallery-expanded.has-nested-images,
 	.pfc-about-grid,
+	.pfc-info-grid,
 	.pfc-contact-grid {
 		display: flex !important;
 		flex-direction: column;

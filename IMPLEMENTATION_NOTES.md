@@ -36,6 +36,9 @@
 - `.gitignore` now blocks common local secrets and SSH key filenames
 - `style.css` version `1.16` adds a premium polish pass: warmer page background, richer brown logo panel, refined CTA depth, subtle image/card radius and shadows, cleaner gallery hover behavior, corrected homepage hero stack alignment, and a non-scroll mobile homepage gallery grid.
 - `functions.php` links homepage gallery thumbnails to `/client/gallery/` on the front end.
+- `style.css` version `1.19` adds reusable info-card styling and contact form polish.
+- Home, Services, Gallery, Experience, About, and Contact page content was tightened with practical service/expectation copy from `concepts/Website-Copy.md`; FPO-specific names, license numbers, and unverifiable certification claims were avoided.
+- Additional web research informed the next copy pass: Bona dust-containment/refinishing guidance, Stanley Steemer tile/grout cleaning and sealing guidance, Mr. Sandless disruption-focused refinishing messaging, and screen/recoat vs. refinish explainer pages. Copy remains conservative and does not claim certifications, proprietary systems, exact percentages, or guarantees unless the client verifies them.
 
 ## Verification Notes
 
