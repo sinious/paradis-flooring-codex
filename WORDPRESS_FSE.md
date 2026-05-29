@@ -110,6 +110,8 @@
 - Do not inject freeform HTML such as raw `<div>`, `<details>`, or custom structural wrappers directly between core blocks unless it is wrapped in a `core/html` block.
 - Prefer core blocks plus `className` for layout and styling; put the design work in `style.css`, block styles, or `theme.json`.
 - If custom markup is unavoidable, isolate it in a Custom HTML block or a template part instead of mixing it into editable core block streams.
+- Inside container blocks such as `Columns` and `Column`, do not hand-write child HTML like `<h2>`, `<h3>`, or `<p>` directly into `innerHTML`.
+- For cards and repeated content inside `Column` blocks, save actual nested core blocks like `Heading`, `Paragraph`, `Image`, and `Buttons` so Gutenberg can validate the block tree.
 
 ## Working Checklist
 

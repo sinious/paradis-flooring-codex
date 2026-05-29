@@ -45,6 +45,7 @@
 - May 29, 2026 diagnosis: invalid Gutenberg block warnings are coming from saved page `post_content`, not the shell templates or template parts.
 - Confirmed broken pages in the editor: Home, Services, Gallery, Experience, About, and Contact. Privacy Policy did not show invalid block warnings.
 - First confirmed cause: `Home` contains raw `<details class="pfc-mobile-nav">...</details>` markup inserted directly into the block stream instead of being wrapped in a valid block.
+- Second confirmed cause across Services, Gallery, Experience, About, and Contact: some `core/column` cards were saved with raw `<h3>` and `<p>` HTML directly inside the column wrapper instead of nested Gutenberg `Heading` and `Paragraph` blocks.
 - Going forward, custom structural HTML must live in a Custom HTML block or reusable template part; editable page content should stay as normal core blocks with classes for styling.
 
 ## Verification Notes
