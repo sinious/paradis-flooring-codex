@@ -39,6 +39,9 @@
 - `style.css` version `1.19` adds reusable info-card styling and contact form polish.
 - Home, Services, Gallery, Experience, About, and Contact page content was tightened with practical service/expectation copy from `concepts/Website-Copy.md`; FPO-specific names, license numbers, and unverifiable certification claims were avoided.
 - Additional web research informed the next copy pass: Bona dust-containment/refinishing guidance, Stanley Steemer tile/grout cleaning and sealing guidance, Mr. Sandless disruption-focused refinishing messaging, and screen/recoat vs. refinish explainer pages. Copy remains conservative and does not claim certifications, proprietary systems, exact percentages, or guarantees unless the client verifies them.
+- `templates/page.html` was switched from constrained layout to default layout so the shared footer can render full-width on inner pages.
+- Homepage content now uses the uploaded WordPress media asset `front-page-hero.webp`; inner-page hero assets were intentionally left in place for later replacement by the user.
+- Inner-page structure/content was refined in WordPress page content: About, Experience, Gallery, Services, and Contact now carry more page-specific copy, and Contact now includes stronger intake guidance plus a lower support section.
 
 ## Verification Notes
 

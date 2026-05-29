@@ -7,7 +7,7 @@ Description: Custom WordPress block theme for the Paradis Flooring front page bu
 Requires at least: 6.7
 Tested up to: 6.9
 Requires PHP: 7.2
-Version: 1.19
+Version: 1.20
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: paradis-flooring-codex
@@ -390,11 +390,16 @@ li {
 
 .pfc-value-title {
 	margin: 0 0 8px;
+	max-width: 12ch;
 	font-size: 0.76rem;
 	font-weight: 800;
 	letter-spacing: 0.06em;
 	line-height: 1.3;
 	text-transform: uppercase;
+}
+
+.pfc-value-card:nth-child(1) .pfc-value-title {
+	max-width: 8ch;
 }
 
 .pfc-value-text {
@@ -508,11 +513,11 @@ li {
 .pfc-service-grid {
 	display: grid !important;
 	grid-template-columns: repeat(6, minmax(0, 1fr));
-	gap: 8px;
+	gap: 12px;
 }
 
 .pfc-service-card {
-	padding-bottom: 14px;
+	padding-bottom: 16px;
 	box-shadow: 0 8px 20px rgba(45, 25, 12, 0.07);
 }
 
@@ -528,23 +533,23 @@ li {
 .pfc-service-card-image img {
 	display: block;
 	width: 100%;
-	height: 82px;
+	height: 96px;
 	object-fit: cover;
 }
 
 .pfc-service-card-title {
-	margin: 0 12px 7px;
-	font-size: 0.76rem;
+	margin: 0 13px 8px;
+	font-size: 0.8rem;
 	font-weight: 800;
-	line-height: 1.2;
+	line-height: 1.25;
 	text-transform: uppercase;
 }
 
 .pfc-service-card-text {
-	margin: 0 12px;
+	margin: 0 13px;
 	color: #352d28;
-	font-size: 0.68rem;
-	line-height: 1.45;
+	font-size: 0.72rem;
+	line-height: 1.5;
 }
 
 .pfc-about-grid,
@@ -777,6 +782,7 @@ li {
 	position: sticky;
 	top: 24px;
 	padding: clamp(28px, 3vw, 40px);
+	min-height: min(100%, 38rem);
 	background:
 		linear-gradient(180deg, #fffaf5 0%, #f1e4d8 100%);
 	border-color: #dccabb;
@@ -973,9 +979,11 @@ li {
 }
 
 .pfc-gallery-page .pfc-gallery-masonry {
+	width: min(1320px, calc(100vw - 80px));
+	max-width: min(1320px, calc(100vw - 80px));
 	columns: 3 260px;
-	column-gap: 14px;
-	padding-top: 24px;
+	column-gap: 18px;
+	padding-top: 18px;
 	padding-bottom: 72px;
 }
 
@@ -1022,6 +1030,12 @@ li {
 	transform: scale(1.015);
 }
 
+.pfc-gallery-page .pfc-gallery-masonry .wp-block-image:has(img[src$="paradis_flooring_06.webp"]),
+.pfc-gallery-page .pfc-gallery-masonry .wp-block-image:has(img[src$="paradis_flooring_12.webp"]),
+.pfc-gallery-page .pfc-gallery-masonry .wp-block-image:has(img[src$="paradis_flooring_18.webp"]) {
+	display: none;
+}
+
 @media (max-width: 1080px) {
 	.pfc-split-hero {
 		grid-template-columns: minmax(260px, 32vw) minmax(0, 1fr);
@@ -1057,6 +1071,71 @@ li {
 	}
 }
 
+@media (max-width: 980px) {
+	.pfc-main-nav {
+		display: none !important;
+	}
+
+	.pfc-mobile-nav {
+		display: block;
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 12;
+		margin: 0;
+	}
+
+	.pfc-mobile-nav summary {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 64px;
+		min-height: 64px;
+		padding: 0;
+		cursor: pointer;
+		list-style: none;
+	}
+
+	.pfc-mobile-nav summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.pfc-mobile-nav summary::after {
+		content: "";
+		width: 24px;
+		height: 2px;
+		background: #fff;
+		box-shadow: 0 7px 0 #fff, 0 14px 0 #fff;
+	}
+
+	.pfc-mobile-nav[open] .pfc-mobile-nav-panel {
+		display: block;
+	}
+
+	.pfc-mobile-nav-panel {
+		display: none;
+		min-width: 220px;
+		background: rgba(98,49,17,0.98);
+		border-top: 1px solid rgba(255,255,255,0.14);
+	}
+
+	.pfc-mobile-nav a {
+		display: block;
+		padding: 15px 18px;
+		border-top: 1px solid rgba(255,255,255,0.14);
+		color: #fff;
+		font-size: 0.78rem;
+		font-weight: 800;
+		letter-spacing: 0.08em;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+
+	.pfc-mobile-nav a.is-current {
+		background: rgba(255,255,255,0.08);
+	}
+}
+
 @media (max-width: 760px) {
 	:root {
 		--pfc-content: min(100% - 32px, 1160px);
@@ -1084,7 +1163,6 @@ li {
 	}
 
 	.pfc-mobile-nav {
-		display: block;
 		position: absolute;
 		top: 0;
 		right: 0;
@@ -1315,6 +1393,8 @@ li {
 	}
 
 	.pfc-gallery-page .pfc-gallery-masonry {
+		width: var(--pfc-content);
+		max-width: var(--pfc-content);
 		columns: 1;
 		padding-bottom: 50px;
 	}
@@ -1322,4 +1402,16 @@ li {
 	.pfc-gallery-page .pfc-gallery-masonry .wp-block-image:nth-child(n) {
 		height: min(72vw, 360px);
 	}
+
+	.page-id-37 .pfc-bottom-cta .pfc-bottom-actions {
+		display: none;
+	}
+
+	.page-id-37 .pfc-bottom-copy {
+		max-width: none;
+	}
+}
+
+.page-id-37 .pfc-bottom-cta {
+	display: none;
 }
