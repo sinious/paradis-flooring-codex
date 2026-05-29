@@ -42,6 +42,10 @@
 - `templates/page.html` was switched from constrained layout to default layout so the shared footer can render full-width on inner pages.
 - Homepage content now uses the uploaded WordPress media asset `front-page-hero.webp`; inner-page hero assets were intentionally left in place for later replacement by the user.
 - Inner-page structure/content was refined in WordPress page content: About, Experience, Gallery, Services, and Contact now carry more page-specific copy, and Contact now includes stronger intake guidance plus a lower support section.
+- May 29, 2026 diagnosis: invalid Gutenberg block warnings are coming from saved page `post_content`, not the shell templates or template parts.
+- Confirmed broken pages in the editor: Home, Services, Gallery, Experience, About, and Contact. Privacy Policy did not show invalid block warnings.
+- First confirmed cause: `Home` contains raw `<details class="pfc-mobile-nav">...</details>` markup inserted directly into the block stream instead of being wrapped in a valid block.
+- Going forward, custom structural HTML must live in a Custom HTML block or reusable template part; editable page content should stay as normal core blocks with classes for styling.
 
 ## Verification Notes
 

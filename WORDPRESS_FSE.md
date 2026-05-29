@@ -106,6 +106,10 @@
 - If a future build process is added, update `style.min.css` or change the enqueue strategy
 - The front page is custom and should not use the normal header; inner pages use `parts/header.html` and `parts/footer.html`
 - Site Editor saved templates can override theme files; check this if file edits do not show
+- Saved page `post_content` must stay valid Gutenberg block markup.
+- Do not inject freeform HTML such as raw `<div>`, `<details>`, or custom structural wrappers directly between core blocks unless it is wrapped in a `core/html` block.
+- Prefer core blocks plus `className` for layout and styling; put the design work in `style.css`, block styles, or `theme.json`.
+- If custom markup is unavoidable, isolate it in a Custom HTML block or a template part instead of mixing it into editable core block streams.
 
 ## Working Checklist
 
