@@ -7,7 +7,7 @@ Description: Custom WordPress block theme for the Paradis Flooring front page bu
 Requires at least: 6.7
 Tested up to: 6.9
 Requires PHP: 7.2
-Version: 1.20
+Version: 1.21
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: paradis-flooring-codex
@@ -70,6 +70,8 @@ li {
 .pfc-front-page,
 .pfc-subpage,
 .pfc-default-page {
+	--wp--style--root--padding-left: 0px;
+	--wp--style--root--padding-right: 0px;
 	background: var(--pfc-paper);
 	color: var(--pfc-ink);
 	overflow: hidden;
@@ -93,6 +95,26 @@ li {
 	margin-right: auto !important;
 }
 
+:is(.pfc-subpage, .pfc-default-page) .wp-block-post-content > .alignwide,
+:is(.pfc-subpage, .pfc-default-page) .wp-block-post-content > .alignwide.wp-block-columns,
+:is(.pfc-subpage, .pfc-default-page) .wp-block-post-content > .alignwide.wp-block-group,
+:is(.pfc-subpage, .pfc-default-page) .wp-block-post-content > .alignwide.wp-block-heading,
+:is(.pfc-subpage, .pfc-default-page) .wp-block-post-content > .alignwide.wp-block-paragraph {
+	width: var(--pfc-content);
+	max-width: var(--pfc-content);
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+:is(.pfc-work, .pfc-services-section, .pfc-about-section, .pfc-rich-section) > .alignwide,
+:is(.pfc-work, .pfc-services-section, .pfc-about-section, .pfc-rich-section) > .wp-block-columns.alignwide,
+:is(.pfc-work, .pfc-services-section, .pfc-about-section, .pfc-rich-section) > .wp-block-group.alignwide {
+	width: var(--pfc-content) !important;
+	max-width: var(--pfc-content) !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
 .pfc-split-hero {
 	position: relative;
 	display: grid;
@@ -112,7 +134,7 @@ li {
 }
 
 .home .pfc-split-hero {
-	grid-template-rows: 74px 106px minmax(332px, 27vw);
+	grid-template-rows: 74px 106px minmax(348px, 27vw);
 }
 
 .pfc-brand-panel {
@@ -203,8 +225,28 @@ li {
 
 .home .pfc-hero-copy {
 	justify-content: flex-start;
-	padding-top: 28px;
-	padding-bottom: 34px;
+	padding-top: 14px;
+	padding-bottom: 20px;
+}
+
+.home .pfc-hero-title {
+	max-width: 13.5ch;
+	font-size: clamp(1.8rem, 2.05vw, 2.24rem);
+	line-height: 1.06;
+}
+
+.home .pfc-hero-rule {
+	margin: 12px 0 12px !important;
+}
+
+.home .pfc-hero-text {
+	max-width: 33ch;
+	line-height: 1.48;
+	font-size: 0.86rem;
+}
+
+.home .pfc-hero-actions {
+	margin-top: 14px;
 }
 
 .pfc-subpage-copy {
@@ -281,6 +323,17 @@ li {
 	object-fit: cover;
 	object-position: center center;
 	filter: saturate(1.04) contrast(1.03);
+	cursor: default !important;
+	pointer-events: none;
+}
+
+.pfc-hero-image,
+.pfc-hero-image * {
+	cursor: default !important;
+}
+
+.pfc-hero-image a {
+	pointer-events: none !important;
 }
 
 .pfc-button .wp-block-button__link {
@@ -538,7 +591,8 @@ li {
 }
 
 .pfc-service-card-title {
-	margin: 0 13px 8px;
+	margin: 0 13px 0;
+	padding: 0 0 8px;
 	font-size: 0.8rem;
 	font-weight: 800;
 	line-height: 1.25;
@@ -547,6 +601,7 @@ li {
 
 .pfc-service-card-text {
 	margin: 0 13px;
+	padding: 0 0 8px;
 	color: #352d28;
 	font-size: 0.72rem;
 	line-height: 1.5;
@@ -582,6 +637,65 @@ li {
 	display: grid !important;
 	grid-template-columns: repeat(3, minmax(0, 1fr));
 	gap: 16px;
+}
+
+.pfc-transform-story {
+	padding-top: 18px;
+	padding-bottom: 50px;
+}
+
+.pfc-transform-story .pfc-services-intro {
+	margin-bottom: 28px;
+}
+
+.pfc-transform-copy {
+	max-width: 46rem;
+}
+
+.pfc-transform-copy p:last-child {
+	margin-bottom: 0;
+}
+
+.pfc-transform-compare {
+	align-items: stretch !important;
+	gap: 18px;
+}
+
+.pfc-transform-panel {
+	padding: 0;
+	overflow: hidden;
+	background: linear-gradient(180deg, #fffaf5 0%, #f4e9dd 100%);
+	border: 1px solid var(--pfc-line);
+	box-shadow: 0 12px 30px rgba(45, 25, 12, 0.06);
+}
+
+.pfc-transform-panel .wp-block-image {
+	margin: 0;
+}
+
+.pfc-transform-panel .wp-block-image img {
+	display: block;
+	width: 100%;
+	height: clamp(250px, 31vw, 390px);
+	object-fit: cover;
+}
+
+.pfc-transform-label {
+	margin: 0;
+	padding: 16px 18px 6px;
+	color: var(--pfc-brown);
+	font-size: 0.74rem;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.pfc-transform-caption {
+	margin: 0;
+	padding: 0 18px 20px;
+	color: #2f2925;
+	font-size: 0.9rem;
+	line-height: 1.55;
 }
 
 .pfc-info-card {
@@ -824,6 +938,14 @@ li {
 	border-bottom: 1px solid var(--pfc-line);
 }
 
+.pfc-bottom-cta-grid {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	column-gap: 28px;
+}
+
 .pfc-bottom-copy {
 	position: relative;
 	display: grid;
@@ -831,6 +953,7 @@ li {
 	column-gap: 22px;
 	align-items: center;
 	max-width: 760px;
+	text-align: left;
 }
 
 .pfc-bottom-copy > :where(*) {
@@ -850,17 +973,16 @@ li {
 	border-radius: 50%;
 	color: transparent;
 	font-size: 0;
-	background: rgba(255,250,245,0.72);
+	overflow: hidden;
+	background:
+		url("http://localhost/client/wp-content/uploads/2026/05/deco-stairs-corner.webp") center / cover no-repeat,
+		linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0)),
+		#fff;
 	box-shadow: 0 10px 24px rgba(98,49,17,0.12);
 }
 
 .pfc-chat-icon::before {
-	content: "...";
-	color: var(--pfc-brown);
-	font-size: 1.4rem;
-	font-weight: 800;
-	letter-spacing: 0.06em;
-	line-height: 1;
+	content: none;
 }
 
 .pfc-bottom-title {
@@ -881,13 +1003,20 @@ li {
 	line-height: 1.4;
 }
 
+.pfc-bottom-actions {
+	display: flex;
+	justify-content: flex-end;
+	flex: 0 0 auto;
+	width: auto;
+}
+
 .pfc-front-footer {
 	padding: 24px 0 28px;
 	background: var(--pfc-footer);
 }
 
 .pfc-footer-row {
-	gap: 20px;
+	text-align: center;
 	color: #fff;
 	font-size: 0.76rem;
 	font-weight: 700;
@@ -896,39 +1025,30 @@ li {
 	text-transform: uppercase;
 }
 
-.pfc-footer-row p {
+.pfc-footer-line {
 	margin: 0;
-}
-
-.pfc-footer-row p:not(:last-child) {
-	padding-right: clamp(18px, 3vw, 44px);
-	border-right: 1px solid var(--pfc-footer-line);
-}
-
-.pfc-social-links {
 	display: inline-flex;
-	gap: 12px;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
 }
 
-.pfc-social-links a {
-	display: grid;
-	place-items: center;
-	width: 34px;
-	height: 34px;
-	border: 2px solid #fff;
-	border-radius: 50%;
-	color: transparent;
-	font-family: Georgia, serif;
-	font-size: 0;
-	font-weight: 700;
-	line-height: 1;
+.pfc-footer-line a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 18px;
+	height: 18px;
+	color: #fff;
 	text-decoration: none;
 }
 
-.pfc-social-links a::before {
-	content: "f";
-	color: #fff;
-	font-size: 1.1rem;
+.pfc-facebook-icon {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
 }
 
 .pfc-inner-header {
@@ -1134,6 +1254,34 @@ li {
 	.pfc-mobile-nav a.is-current {
 		background: rgba(255,255,255,0.08);
 	}
+
+	.home .pfc-hero-copy {
+		padding: 18px 22px 22px;
+	}
+
+	.home .pfc-hero-copy > * {
+		max-width: none !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+
+	.home .pfc-hero-title {
+		max-width: 10.5ch;
+		font-size: clamp(1.95rem, 4.9vw, 2.4rem);
+		line-height: 1.03;
+	}
+
+	.home .pfc-hero-text {
+		max-width: 31ch !important;
+		font-size: 0.84rem;
+		line-height: 1.46;
+	}
+
+	.home .pfc-hero-actions,
+	.home .pfc-hero-actions .wp-block-button,
+	.home .pfc-hero-actions .wp-block-button__link {
+		width: auto;
+	}
 }
 
 @media (max-width: 760px) {
@@ -1253,6 +1401,41 @@ li {
 		margin-top: 20px;
 	}
 
+	.home .pfc-hero-copy {
+		padding: 18px 18px 20px;
+	}
+
+	.home .pfc-hero-copy > * {
+		max-width: none !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+	}
+
+	.home .pfc-hero-title {
+		font-size: clamp(1.75rem, 7.8vw, 2.35rem);
+		line-height: 1.04;
+		max-width: 10.2ch;
+	}
+
+	.home .pfc-hero-rule {
+		margin: 10px 0 10px !important;
+	}
+
+	.home .pfc-hero-text {
+		font-size: 0.82rem;
+		line-height: 1.46;
+	}
+
+	.home .pfc-hero-actions {
+		margin-top: 14px;
+	}
+
+	.home .pfc-hero-actions,
+	.home .pfc-hero-actions .wp-block-button,
+	.home .pfc-hero-actions .wp-block-button__link {
+		width: auto;
+	}
+
 	.pfc-button .wp-block-button__link {
 		min-height: 44px;
 		padding: 0.78rem 1.15rem;
@@ -1272,6 +1455,11 @@ li {
 		margin-top: 0 !important;
 		padding-top: 34px;
 		padding-bottom: 48px;
+	}
+
+	.pfc-transform-compare {
+		display: flex !important;
+		flex-direction: column;
 	}
 
 	.pfc-contact-form-shell {
@@ -1357,11 +1545,13 @@ li {
 
 	.pfc-service-card-title {
 		margin: 0;
+		padding: 0 0 5px;
 		font-size: 0.72rem;
 	}
 
 	.pfc-service-card-text {
 		margin: 4px 0 0;
+		padding: 0 0 5px;
 		font-size: 0.68rem;
 		line-height: 1.35;
 	}
@@ -1384,12 +1574,11 @@ li {
 	}
 
 	.pfc-footer-row {
-		justify-content: flex-start;
+		text-align: center;
 	}
 
-	.pfc-footer-row p:not(:last-child) {
-		border-right: 0;
-		padding-right: 0;
+	.pfc-footer-line {
+		gap: 0.35rem;
 	}
 
 	.pfc-gallery-page .pfc-gallery-masonry {

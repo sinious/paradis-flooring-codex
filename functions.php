@@ -55,6 +55,87 @@ if ( ! function_exists( 'paradis_flooring_codex_enqueue_google_fonts' ) ) :
 endif;
 add_action( 'wp_enqueue_scripts', 'paradis_flooring_codex_enqueue_google_fonts' );
 
+if ( ! function_exists( 'paradis_flooring_codex_cleanup_image_links' ) ) :
+	/**
+	 * Prevent branded images from opening attachment/lightbox views.
+	 *
+	 * @return void
+	 */
+	function paradis_flooring_codex_cleanup_image_links() {
+		wp_register_script(
+			'paradis-flooring-codex-image-links',
+			false,
+			array(),
+			wp_get_theme()->get( 'Version' ),
+			true
+		);
+
+		wp_enqueue_script( 'paradis-flooring-codex-image-links' );
+
+		$home_url = wp_json_encode( home_url( '/' ) );
+
+		wp_add_inline_script(
+			'paradis-flooring-codex-image-links',
+			"(function () {
+				var homeUrl = " . $home_url . ";
+				var allowedGallerySelector = '.pfc-gallery, .pfc-gallery-masonry';
+
+				function isGalleryImage(node) {
+					return !!(node && node.closest(allowedGallerySelector));
+				}
+
+				function cleanupImageLinks() {
+					document.querySelectorAll('.wp-block-image').forEach(function (figure) {
+						if (isGalleryImage(figure)) {
+							return;
+						}
+
+						figure.querySelectorAll('a').forEach(function (link) {
+							var image = link.querySelector('img');
+							if (image && link.parentNode) {
+								link.parentNode.insertBefore(image, link);
+							}
+							link.remove();
+						});
+
+						figure.querySelectorAll('[data-elementor-open-lightbox],[data-lightbox]').forEach(function (node) {
+							node.removeAttribute('data-elementor-open-lightbox');
+							node.removeAttribute('data-lightbox');
+						});
+
+						figure.addEventListener('click', function (event) {
+							event.preventDefault();
+							event.stopPropagation();
+						}, true);
+					});
+
+					document.querySelectorAll('.pfc-brand-logo a').forEach(function (link) {
+						link.href = homeUrl;
+						link.removeAttribute('data-elementor-open-lightbox');
+						link.removeAttribute('data-lightbox');
+						link.removeAttribute('target');
+						link.removeAttribute('rel');
+						link.addEventListener('click', function (event) {
+							event.preventDefault();
+							event.stopPropagation();
+							window.location.href = homeUrl;
+						}, true);
+					});
+				}
+
+				if (document.readyState === 'loading') {
+					document.addEventListener('DOMContentLoaded', cleanupImageLinks, { once: true });
+				} else {
+					cleanupImageLinks();
+				}
+
+				window.setTimeout(cleanupImageLinks, 250);
+			}());"
+		);
+	}
+endif;
+add_action( 'wp_enqueue_scripts', 'paradis_flooring_codex_cleanup_image_links' );
+
 if ( ! function_exists( 'paradis_flooring_codex_gallery_links' ) ) :
 	/**
 	 * Link homepage gallery thumbnails to the full Gallery page.
