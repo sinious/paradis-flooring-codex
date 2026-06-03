@@ -84,9 +84,13 @@ if ( ! function_exists( 'paradis_flooring_codex_cleanup_image_links' ) ) :
 					return !!(node && node.closest(allowedGallerySelector));
 				}
 
+				function isBrandLogo(node) {
+					return !!(node && (node.classList.contains('pfc-brand-logo') || node.closest('.pfc-brand-logo')));
+				}
+
 				function cleanupImageLinks() {
 					document.querySelectorAll('.wp-block-image').forEach(function (figure) {
-						if (isGalleryImage(figure)) {
+						if (isGalleryImage(figure) || isBrandLogo(figure)) {
 							return;
 						}
 
