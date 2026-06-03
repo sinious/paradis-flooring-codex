@@ -32,7 +32,7 @@
 - Project is attached in Codex using the existing local folder
 - Assigned Codex workspace: `C:\Work\wamp64\www\client\wp-content\themes\paradis-flooring-codex`
 - This folder is now a Git repository with private GitHub remote `git@github.com:sinious/paradis-flooring-codex.git`
-- Current branch: `codex/fse-block-repair` (merged into `main`)
+- Current branch: `main`
 - Latest pushed commit: `b7dd75c` (`Cap site width to 1600px and fix split-hero vertical scaling using absolute image and percentage columns`)
 - `PERSONA.md` exists and should be used as communication guidance
 - Current source-of-truth concept image: `concepts/concept-2.png`

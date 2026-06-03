@@ -67,7 +67,7 @@
 ## Git State
 
 Repo branch:
-`codex/fse-block-repair` (clean working directory, merged into `main`)
+`main` (clean working directory)
 
 Latest pushed rebuild commit:
 `b7dd75c`
