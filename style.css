@@ -7,7 +7,7 @@ Description: Custom WordPress block theme for the Paradis Flooring front page bu
 Requires at least: 6.7
 Tested up to: 7.0
 Requires PHP: 7.2
-Version: 1.25
+Version: 1.26
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: paradis-flooring
@@ -711,7 +711,6 @@ li {
 	gap: clamp(24px, 4vw, 52px);
 	position: relative;
 	z-index: 3;
-	margin-top: -34px !important;
 	padding-top: 0;
 	padding-bottom: 74px;
 }
