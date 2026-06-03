@@ -19,6 +19,8 @@
 - The homepage intentionally uses custom CSS for art direction while keeping block markup FSE-compatible
 - Keep global tokens in `theme.json`; keep composition-specific selectors in `style.css`
 - Watch for hero image resolution/crop changes; copy placement depends on the wall/negative-space area of the image
+- To prevent large intrinsic image sizes from inflating split-hero grid heights when using `minmax(..., auto)` rows, position the `.pfc-hero-image` absolutely inside its grid cell on desktop viewports so it does not size the row.
+
 
 ## Use Cases
 

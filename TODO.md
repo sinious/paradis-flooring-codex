@@ -99,7 +99,7 @@ Last edited file:
 
 Current version:
 
-- `1.16`
+- `1.25`
 
 Recent changes:
 
@@ -117,6 +117,9 @@ Recent changes:
 - Home hero headline now clears the logo panel, wraps to three lines, and keeps the CTA above the value strip.
 - Services/subpage hero headline scale now matches the two-line concept direction.
 - Gallery page masonry CSS should remain separate and unchanged.
+- Added 1600px page max-width capping and shadow wrappers on widescreen viewports (version 1.25).
+- Fixed giant desktop hero vertical heights using absolute positioning on `.pfc-hero-image` to prevent intrinsic size breakout (version 1.25).
+- Converted split-hero columns from `vw` to percentages to scale properly within bounded width limits (version 1.25).
 
 ## Known Issues / Verify Next
 
@@ -133,11 +136,8 @@ Check these first:
 - Logo size and brown-panel fit on desktop and mobile.
 - Home hero headline no longer visually collides with the logo/brown panel.
 - Gallery still renders masonry and still uses the real gallery images.
-
-Known prior measurement:
-
-- Home hero had an overlap risk where the headline measured inside the logo zone after earlier layout tuning.
-- Verify visually before doing more hero tuning.
+- Page layout remains centered and capped at 1600px width on viewports >= 1600px.
+- Split-hero heights on widescreen monitors remain compact (around 530px-570px) and do not balloon.
 
 ## Browser Note
 

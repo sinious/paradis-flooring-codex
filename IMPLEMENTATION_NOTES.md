@@ -37,6 +37,8 @@
 - `style.css` version `1.16` adds a premium polish pass: warmer page background, richer brown logo panel, refined CTA depth, subtle image/card radius and shadows, cleaner gallery hover behavior, corrected homepage hero stack alignment, and a non-scroll mobile homepage gallery grid.
 - `functions.php` links homepage gallery thumbnails to `/client/gallery/` on the front end.
 - `style.css` version `1.19` adds reusable info-card styling and contact form polish.
+- `style.css` version `1.24` sets `.pfc-split-hero` grid rows to `auto` height to fix squished columns and prevent text overlaps at intermediate viewports.
+- `style.css` version `1.25` introduces a `1600px` max-width limit on the site blocks wrapper (`.wp-site-blocks`), resets `.alignfull` blocks within it, converts split-hero columns to percentages, and positions `.pfc-hero-image` absolutely on desktop viewports to prevent wide image sizes from inflating the hero's vertical height.
 - Home, Services, Gallery, Experience, About, and Contact page content was tightened with practical service/expectation copy from `concepts/Website-Copy.md`; FPO-specific names, license numbers, and unverifiable certification claims were avoided.
 - Additional web research informed the next copy pass: Bona dust-containment/refinishing guidance, Stanley Steemer tile/grout cleaning and sealing guidance, Mr. Sandless disruption-focused refinishing messaging, and screen/recoat vs. refinish explainer pages. Copy remains conservative and does not claim certifications, proprietary systems, exact percentages, or guarantees unless the client verifies them.
 - `templates/page.html` was switched from constrained layout to default layout so the shared footer can render full-width on inner pages.
@@ -65,10 +67,10 @@
 ## Git State
 
 Repo branch:
-`main`
+`codex/fse-block-repair` (clean working directory, merged into `main`)
 
 Latest pushed rebuild commit:
-`86dc5c8`
+`b7dd75c`
 
 ## Next Likely Focus
 
