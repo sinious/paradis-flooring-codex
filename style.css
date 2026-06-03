@@ -1,16 +1,16 @@
 /*
-Theme Name: Paradis Flooring Codex
-Theme URI: http://localhost/client/
-Author: OpenAI Codex
-Author URI: https://openai.com/
-Description: Custom WordPress block theme for the Paradis Flooring front page build in the paradis-flooring-codex workspace.
+Theme Name: Paradis Flooring
+Theme URI: https://paradisflooring.com/site/
+Author: Jason Lawless
+Author URI: https://jasonalawless.com
+Description: Custom WordPress block theme for the Paradis Flooring front page build in the paradis-flooring workspace.
 Requires at least: 6.7
-Tested up to: 6.9
+Tested up to: 7.0
 Requires PHP: 7.2
 Version: 1.21
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: paradis-flooring-codex
+Text Domain: paradis-flooring
 Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, featured-images, full-site-editing, wide-blocks
 */
 
@@ -133,10 +133,6 @@ li {
 	padding-right: 0;
 }
 
-.home .pfc-split-hero {
-	grid-template-rows: 74px 106px minmax(348px, 27vw);
-}
-
 .pfc-brand-panel {
 	grid-column: 1;
 	grid-row: 1 / 3;
@@ -168,6 +164,8 @@ li {
 .pfc-main-nav {
 	grid-column: 2;
 	grid-row: 1;
+	display: flex;
+	align-items: center;
 	align-self: stretch;
 	gap: clamp(24px, 4vw, 56px);
 	margin: 0;
@@ -178,31 +176,45 @@ li {
 
 .pfc-main-nav p {
 	margin: 0;
+	height: 74px;
+	border-bottom: 1px solid transparent;
+	display: flex;
+	align-items: center;
 }
 
 .pfc-main-nav a {
 	display: inline-flex;
 	align-items: center;
-	min-height: 74px;
-	border-bottom: 2px solid transparent;
+	justify-content: center;
+	height: 100%;
 	color: var(--pfc-ink);
 	font-size: 0.82rem;
 	font-weight: 800;
 	letter-spacing: 0.08em;
+	line-height: 1;
 	text-decoration: none;
 	text-transform: uppercase;
-	transition: border-color 180ms ease, color 180ms ease, opacity 180ms ease;
+	transition: color 180ms ease, opacity 180ms ease;
 }
 
 .pfc-main-nav .is-current a {
-	border-color: var(--pfc-brown);
 	color: var(--pfc-brown);
 }
 
+.pfc-main-nav .is-current {
+	border-bottom-color: var(--pfc-brown);
+}
+
 .pfc-main-nav a:hover {
-	border-color: rgba(98,49,17,0.32);
-	color: var(--pfc-brown);
 	opacity: 0.92;
+}
+
+.pfc-main-nav p:hover {
+	border-bottom-color: rgba(98,49,17,0.32);
+}
+
+.pfc-main-nav p:hover a {
+	color: var(--pfc-brown);
 }
 
 .pfc-mobile-nav {
@@ -975,7 +987,7 @@ li {
 	font-size: 0;
 	overflow: hidden;
 	background:
-		url("http://localhost/client/wp-content/uploads/2026/05/deco-stairs-corner.webp") center / cover no-repeat,
+		url("https://paradisflooring.com/site/wp-content/uploads/2026/05/deco-stairs-corner.webp") center / cover no-repeat,
 		linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0)),
 		#fff;
 	box-shadow: 0 10px 24px rgba(98,49,17,0.12);

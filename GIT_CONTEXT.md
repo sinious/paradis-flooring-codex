@@ -35,6 +35,8 @@
 - Use normal Git commands inside the project folder.
 - Commit context-file updates when they materially improve future handoff.
 - Push after meaningful commits when the user asks to save or publish work.
+- This project is effectively single-operator: just the user and Codex working locally/in-repo together.
+- Do not create pull requests unless the user explicitly asks for one.
 - Do not run destructive Git commands such as reset/checkout/clean unless explicitly requested.
 - Do not commit secrets, passphrases, private keys, local environment files, database dumps, or generated archives.
 
