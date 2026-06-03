@@ -15,16 +15,16 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 */
 
 :root {
-	--pfc-ink: #181513;
-	--pfc-muted: #5c5148;
-	--pfc-brown: #623111;
-	--pfc-brown-dark: #4d2409;
-	--pfc-brown-soft: #8f5a36;
-	--pfc-cream: #f8f3ed;
-	--pfc-paper: #fffaf5;
-	--pfc-line: #e2d7cb;
-	--pfc-footer: #1c1a18;
-	--pfc-footer-line: #5e564f;
+	--pfc-ink: var(--wp--preset--color--pfc-ink);
+	--pfc-muted: var(--wp--preset--color--contrast);
+	--pfc-brown: var(--wp--preset--color--pfc-brown);
+	--pfc-brown-dark: var(--wp--preset--color--pfc-brown-dark);
+	--pfc-brown-soft: var(--wp--preset--color--pfc-brown-soft);
+	--pfc-cream: var(--wp--preset--color--pfc-cream);
+	--pfc-paper: var(--wp--preset--color--pfc-paper);
+	--pfc-line: var(--wp--preset--color--pfc-line);
+	--pfc-footer: var(--wp--preset--color--pfc-footer);
+	--pfc-footer-line: var(--wp--preset--color--pfc-footer-line);
 	--pfc-content: min(1180px, calc(100vw - 56px));
 	--pfc-shadow-soft: 0 22px 60px rgba(68, 35, 14, 0.12);
 	--pfc-shadow-image: 0 14px 34px rgba(45, 25, 12, 0.16);
@@ -33,7 +33,7 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 body {
 	background:
 		radial-gradient(circle at 20% 0%, rgba(98,49,17,0.055), transparent 34rem),
-		linear-gradient(180deg, #fffaf5 0%, #f8f3ed 100%);
+		linear-gradient(180deg, var(--pfc-paper) 0%, var(--pfc-cream) 100%);
 	color: var(--pfc-ink);
 	font-family: "Inter", sans-serif;
 }
@@ -43,14 +43,7 @@ a {
 	text-underline-offset: 0.18em;
 }
 
-:where(.wp-site-blocks *:focus:not(:focus-visible)) {
-	outline: none;
-}
 
-:where(.wp-site-blocks *:focus-visible) {
-	outline: 2px solid var(--pfc-brown);
-	outline-offset: 4px;
-}
 
 h1,
 h2,
@@ -348,26 +341,7 @@ li {
 	pointer-events: none !important;
 }
 
-.pfc-button .wp-block-button__link {
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	min-width: 205px;
-	min-height: 50px;
-	padding: 0.95rem 1.5rem;
-	border-radius: 0;
-	background:
-		linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0) 42%),
-		var(--pfc-brown);
-	color: #fff;
-	font-size: 0.82rem;
-	font-weight: 800;
-	letter-spacing: 0.1em;
-	text-decoration: none;
-	text-transform: uppercase;
-	box-shadow: 0 10px 24px rgba(98,49,17,0.2);
-	transition: background-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
-}
+
 
 .pfc-button .wp-block-button__link::after,
 .pfc-view-all a::after {
@@ -377,11 +351,7 @@ li {
 	line-height: 1;
 }
 
-.pfc-button .wp-block-button__link:hover {
-	background: var(--pfc-brown-dark);
-	box-shadow: 0 14px 30px rgba(98,49,17,0.25);
-	transform: translateY(-1px);
-}
+
 
 .pfc-value-strip {
 	padding: 16px 0;
