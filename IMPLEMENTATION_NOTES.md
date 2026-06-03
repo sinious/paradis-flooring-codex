@@ -63,6 +63,10 @@
 - Full-page screenshots can visually repeat the hero due browser capture stitching; scroll-by-scroll verification showed the actual page order is correct
 - Browser plugin/local browser workflow worked after Node was updated to v24.15.0/npm 11.12.1
 - GitHub push succeeded after setting this project to use Windows OpenSSH for Git SSH commands
+- Local browser layout audits are executed using Chrome DevTools Protocol (CDP) debugging on port `9222`.
+- **CDP evaluation note:** When inspecting element geometry via `Runtime.evaluate`, standard `DOMRect` properties (`top`, `bottom`, `left`, `right`) are getters on the prototype of `DOMRect` and do not serialize to JSON by default. Extract them into a literal object (e.g. `{ top: rect.top, bottom: rect.bottom }`) to serialize successfully.
+- **Overlap audit note:** The vertical overlap check generates false-positives for horizontally side-by-side grid elements (like brand panel and main navigation, or sibling columns on the Contact page). Verify horizontal boundaries (`left`, `right`) to filter these out.
+
 
 ## Git State
 
