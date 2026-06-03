@@ -121,6 +121,7 @@ Recent changes:
 - Fixed giant desktop hero vertical heights using absolute positioning on `.pfc-hero-image` to prevent intrinsic size breakout (version 1.25).
 - Converted split-hero columns from `vw` to percentages to scale properly within bounded width limits (version 1.25).
 - Updated subpage header template part (`parts/header.html`) to use dynamic FSE `wp:site-logo` block with dynamic link pointing to the site root, set up database `site_logo` option to point to attachment ID `172`, updated database site name `blogname` to `"PARADIS FLOORING LLC"`, and added a fallback hook filter in `functions.php` to handle `wp:site-title` text replacements.
+- Fixed homepage logo link stripping conflict in inline JS `cleanupImageLinks` function inside `functions.php`.
 
 ## Known Issues / Verify Next
 
