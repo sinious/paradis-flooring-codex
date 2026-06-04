@@ -200,3 +200,77 @@ if ( ! function_exists( 'paradis_flooring_codex_filter_site_title' ) ) :
 endif;
 add_filter( 'render_block_core/site-title', 'paradis_flooring_codex_filter_site_title', 10, 2 );
 
+if ( ! function_exists( 'paradis_flooring_codex_mobile_nav_script' ) ) :
+	/**
+	 * Animate mobile menu open/close transitions.
+	 *
+	 * @return void
+	 */
+	function paradis_flooring_codex_mobile_nav_script() {
+		wp_register_script(
+			'paradis-flooring-codex-mobile-nav',
+			false,
+			array(),
+			wp_get_theme()->get( 'Version' ),
+			true
+		);
+
+		wp_enqueue_script( 'paradis-flooring-codex-mobile-nav' );
+
+		wp_add_inline_script(
+			'paradis-flooring-codex-mobile-nav',
+			"(function () {
+				function initMobileNav() {
+					var details = document.querySelector('.pfc-mobile-nav');
+					if (!details) return;
+					var summary = details.querySelector('summary');
+					if (!summary) return;
+					
+					if (details.dataset.pfcNavInitialized) return;
+					details.dataset.pfcNavInitialized = 'true';
+					
+					summary.addEventListener('click', function (e) {
+						e.preventDefault();
+						
+						if (details.classList.contains('pfc-nav-animating')) return;
+						
+						var isOpen = details.hasAttribute('open');
+						
+						if (!isOpen) {
+							details.classList.add('pfc-nav-animating');
+							details.setAttribute('open', '');
+							requestAnimationFrame(function () {
+								requestAnimationFrame(function () {
+									details.classList.add('pfc-nav-open');
+								});
+							});
+							
+							setTimeout(function () {
+								details.classList.remove('pfc-nav-animating');
+							}, 700);
+						} else {
+							details.classList.add('pfc-nav-animating');
+							details.classList.remove('pfc-nav-open');
+							
+							setTimeout(function () {
+								details.removeAttribute('open');
+								details.classList.remove('pfc-nav-animating');
+							}, 700);
+						}
+					});
+				}
+				
+				if (document.readyState === 'loading') {
+					document.addEventListener('DOMContentLoaded', initMobileNav, { once: true });
+				} else {
+					initMobileNav();
+				}
+				
+				window.setTimeout(initMobileNav, 250);
+			}());"
+		);
+	}
+endif;
+add_action( 'wp_enqueue_scripts', 'paradis_flooring_codex_mobile_nav_script' );
+
+

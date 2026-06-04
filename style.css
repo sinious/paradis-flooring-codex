@@ -7,7 +7,7 @@ Description: Custom WordPress block theme for the Paradis Flooring front page bu
 Requires at least: 6.7
 Tested up to: 7.0
 Requires PHP: 7.2
-Version: 1.30
+Version: 1.31
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: paradis-flooring
@@ -1236,6 +1236,7 @@ li {
 		min-width: 220px;
 		background: rgba(98,49,17,0.98);
 		border-top: 1px solid rgba(255,255,255,0.14);
+		overflow: hidden;
 	}
 
 	.pfc-mobile-nav a {
@@ -1248,7 +1249,37 @@ li {
 		letter-spacing: 0.08em;
 		text-decoration: none;
 		text-transform: uppercase;
+		opacity: 0;
+		transform: translateY(-40px);
+		transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
 	}
+
+	.pfc-mobile-nav.pfc-nav-open a {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	.pfc-mobile-nav[open]:not(.pfc-nav-animating):not(.pfc-nav-open) a {
+		opacity: 1;
+		transform: translateY(0);
+		transition: none;
+	}
+
+	/* Delay settings when opening */
+	.pfc-mobile-nav.pfc-nav-open a:nth-child(1) { transition-delay: 0.00s; }
+	.pfc-mobile-nav.pfc-nav-open a:nth-child(2) { transition-delay: 0.05s; }
+	.pfc-mobile-nav.pfc-nav-open a:nth-child(3) { transition-delay: 0.10s; }
+	.pfc-mobile-nav.pfc-nav-open a:nth-child(4) { transition-delay: 0.15s; }
+	.pfc-mobile-nav.pfc-nav-open a:nth-child(5) { transition-delay: 0.20s; }
+	.pfc-mobile-nav.pfc-nav-open a:nth-child(6) { transition-delay: 0.25s; }
+
+	/* Delay settings when closing (reverse cascade) */
+	.pfc-mobile-nav a:nth-child(1) { transition-delay: 0.25s; }
+	.pfc-mobile-nav a:nth-child(2) { transition-delay: 0.20s; }
+	.pfc-mobile-nav a:nth-child(3) { transition-delay: 0.15s; }
+	.pfc-mobile-nav a:nth-child(4) { transition-delay: 0.10s; }
+	.pfc-mobile-nav a:nth-child(5) { transition-delay: 0.05s; }
+	.pfc-mobile-nav a:nth-child(6) { transition-delay: 0.00s; }
 
 	.pfc-mobile-nav a.is-current {
 		background: rgba(255,255,255,0.08);
@@ -1363,22 +1394,7 @@ li {
 		min-width: 220px;
 		background: rgba(98,49,17,0.98);
 		border-top: 1px solid rgba(255,255,255,0.14);
-	}
-
-	.pfc-mobile-nav a {
-		display: block;
-		padding: 15px 18px;
-		border-top: 1px solid rgba(255,255,255,0.14);
-		color: #fff;
-		font-size: 0.78rem;
-		font-weight: 800;
-		letter-spacing: 0.08em;
-		text-decoration: none;
-		text-transform: uppercase;
-	}
-
-	.pfc-mobile-nav a.is-current {
-		background: rgba(255,255,255,0.08);
+		overflow: hidden;
 	}
 
 	.pfc-hero-image {
