@@ -7,7 +7,7 @@ Description: Custom WordPress block theme for the Paradis Flooring front page bu
 Requires at least: 6.7
 Tested up to: 7.0
 Requires PHP: 7.2
-Version: 1.31
+Version: 1.32
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: paradis-flooring
@@ -1285,38 +1285,38 @@ li {
 		background: rgba(255,255,255,0.08);
 	}
 
-	.home .pfc-hero-copy {
+	.pfc-hero-copy {
 		padding: 18px 15px 22px;
 		justify-content: flex-start;
 	}
 
-	.home .pfc-hero-copy > * {
+	.pfc-hero-copy > * {
 		max-width: none !important;
 		margin: 0 auto !important;
 		/* margin-left: 0 !important;
 		margin-right: 0 !important; */
 	}
 
-	.home .pfc-hero-title {
+	.pfc-hero-title {
 		max-width: 10.5ch;
 		margin: 15px auto !important;
 		font-size: clamp(1.5rem, 1.8vw, 2rem);
 		line-height: 1.03;
 	}
 
-	.home .pfc-hero-rule {
+	.pfc-hero-rule {
 		margin: 12px auto !important;
 	}
 
-	.home .pfc-hero-text {
+	.pfc-hero-text {
 		max-width: 31ch !important;
 		font-size: 0.8rem;
 		line-height: 1.30;
 	}
 
-	.home .pfc-hero-actions,
-	.home .pfc-hero-actions .wp-block-button,
-	.home .pfc-hero-actions .wp-block-button__link {
+	.pfc-hero-actions,
+	.pfc-hero-actions .wp-block-button,
+	.pfc-hero-actions .wp-block-button__link {
 		width: auto;
 	}
 }
@@ -1435,38 +1435,38 @@ li {
 		margin-top: 20px;
 	}
 
-	.home .pfc-hero-copy {
+	.pfc-hero-copy {
 		padding: 18px 18px 20px;
 	}
 
-	.home .pfc-hero-copy > * {
+	.pfc-hero-copy > * {
 		max-width: none !important;
 		margin-left: 0 auto !important;
 		margin-right: 0 auto !important;
 	}
 
-	.home .pfc-hero-title {
+	.pfc-hero-title {
 		font-size: clamp(2rem, 8vw, 2.5rem);
 		line-height: 1.04;
 		max-width: 10.2ch;
 	}
 
-	.home .pfc-hero-rule {
+	.pfc-hero-rule {
 		margin: 10px auto !important;
 	}
 
-	.home .pfc-hero-text {
+	.pfc-hero-text {
 		font-size: 0.82rem;
 		line-height: 1.46;
 	}
 
-	.home .pfc-hero-actions {
+	.pfc-hero-actions {
 		margin-top: 14px;
 	}
 
-	.home .pfc-hero-actions,
-	.home .pfc-hero-actions .wp-block-button,
-	.home .pfc-hero-actions .wp-block-button__link {
+	.pfc-hero-actions,
+	.pfc-hero-actions .wp-block-button,
+	.pfc-hero-actions .wp-block-button__link {
 		width: 80vw;
 	}
 
