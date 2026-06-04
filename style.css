@@ -7,7 +7,7 @@ Description: Custom WordPress block theme for the Paradis Flooring front page bu
 Requires at least: 6.7
 Tested up to: 7.0
 Requires PHP: 7.2
-Version: 1.26
+Version: 1.28
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: paradis-flooring
@@ -221,7 +221,7 @@ li {
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
-	padding: 46px clamp(28px, 4vw, 50px) 34px;
+	padding: 46px clamp(22px, 2vw, 40px) 34px;
 	background: linear-gradient(90deg, var(--pfc-paper) 0%, rgba(255,250,245,0.96) 100%);
 	border-right: 1px solid rgba(98,49,17,0.08);
 	box-shadow: 16px 0 38px rgba(98,49,17,0.06);
@@ -229,29 +229,31 @@ li {
 }
 
 .home .pfc-hero-copy {
-	justify-content: flex-start;
+	/* justify-content: flex-start; */
 	padding-top: 14px;
 	padding-bottom: 20px;
 }
 
 .home .pfc-hero-title {
-	max-width: 13.5ch;
-	font-size: clamp(1.8rem, 2.05vw, 2.24rem);
+	/* max-width: 13.5ch; */
+	font-size: clamp(1.5rem, 1.8vw, 2rem);
 	line-height: 1.06;
 }
 
 .home .pfc-hero-rule {
-	margin: 12px 0 12px !important;
+	margin: 12px auto !important;
 }
 
 .home .pfc-hero-text {
-	max-width: 33ch;
+	/* max-width: 33ch; */
 	line-height: 1.48;
 	font-size: 0.86rem;
 }
 
 .home .pfc-hero-actions {
-	margin-top: 14px;
+	/* margin-top: 14px auto; */
+	padding-top:16px;
+	margin: 0 auto !important;
 }
 
 .pfc-subpage-copy {
@@ -260,9 +262,11 @@ li {
 }
 
 .pfc-hero-title {
-	max-width: 12.5ch;
-	margin: 0 !important;
+	/* max-width: 12.5ch; */
+	/* margin: 0 !important; */
+	margin: 20px auto !important;
 	font-family: "Playfair Display", serif;
+	/* font-family: auto "Playfair Display", serif; */
 	font-size: clamp(2.12rem, 2.55vw, 2.78rem);
 	font-weight: 500;
 	letter-spacing: 0;
@@ -1185,6 +1189,7 @@ li {
 		position: absolute;
 		top: 0;
 		right: 0;
+		height: 86px;
 		z-index: 12;
 		margin: 0;
 	}
@@ -1194,10 +1199,12 @@ li {
 		align-items: center;
 		justify-content: center;
 		width: 64px;
-		min-height: 64px;
+		height: 100%;
+		min-height: 100%;
 		padding: 0;
 		cursor: pointer;
 		list-style: none;
+		margin-left: auto;
 	}
 
 	.pfc-mobile-nav summary::-webkit-details-marker {
@@ -1240,25 +1247,32 @@ li {
 	}
 
 	.home .pfc-hero-copy {
-		padding: 18px 22px 22px;
+		padding: 18px 15px 22px;
+		justify-content: flex-start;
 	}
 
 	.home .pfc-hero-copy > * {
 		max-width: none !important;
-		margin-left: 0 !important;
-		margin-right: 0 !important;
+		margin: 0 auto !important;
+		/* margin-left: 0 !important;
+		margin-right: 0 !important; */
 	}
 
 	.home .pfc-hero-title {
 		max-width: 10.5ch;
-		font-size: clamp(1.95rem, 4.9vw, 2.4rem);
+		margin: 15px auto !important;
+		font-size: clamp(1.5rem, 1.8vw, 2rem);
 		line-height: 1.03;
+	}
+
+	.home .pfc-hero-rule {
+		margin: 12px auto !important;
 	}
 
 	.home .pfc-hero-text {
 		max-width: 31ch !important;
-		font-size: 0.84rem;
-		line-height: 1.46;
+		font-size: 0.8rem;
+		line-height: 1.30;
 	}
 
 	.home .pfc-hero-actions,
@@ -1298,6 +1312,7 @@ li {
 		position: absolute;
 		top: 0;
 		right: 0;
+		height: 102px;
 		z-index: 12;
 		margin: 0;
 	}
@@ -1307,10 +1322,12 @@ li {
 		align-items: center;
 		justify-content: center;
 		width: 58px;
-		min-height: 58px;
+		height: 100%;
+		min-height: 100%;
 		padding: 0;
 		cursor: pointer;
 		list-style: none;
+		margin-left: auto;
 	}
 
 	.pfc-mobile-nav summary::-webkit-details-marker {
@@ -1360,8 +1377,12 @@ li {
 
 	.pfc-hero-copy {
 		order: 3;
-		padding: 24px 20px 26px;
+		padding: 20px 15px;
 		border-right: 0;
+	}
+
+	.pfc-hero-copy h2 {
+		font-size: 40px;
 	}
 
 	.pfc-hero-title,
@@ -1379,7 +1400,7 @@ li {
 
 	.pfc-hero-rule {
 		width: 44px;
-		margin: 14px 0 14px !important;
+		margin: 14px auto !important;
 	}
 
 	.pfc-hero-actions {
@@ -1392,18 +1413,18 @@ li {
 
 	.home .pfc-hero-copy > * {
 		max-width: none !important;
-		margin-left: 0 !important;
-		margin-right: 0 !important;
+		margin-left: 0 auto !important;
+		margin-right: 0 auto !important;
 	}
 
 	.home .pfc-hero-title {
-		font-size: clamp(1.75rem, 7.8vw, 2.35rem);
+		font-size: clamp(2rem, 8vw, 2.5rem);
 		line-height: 1.04;
 		max-width: 10.2ch;
 	}
 
 	.home .pfc-hero-rule {
-		margin: 10px 0 10px !important;
+		margin: 10px auto !important;
 	}
 
 	.home .pfc-hero-text {
@@ -1418,7 +1439,7 @@ li {
 	.home .pfc-hero-actions,
 	.home .pfc-hero-actions .wp-block-button,
 	.home .pfc-hero-actions .wp-block-button__link {
-		width: auto;
+		width: 80vw;
 	}
 
 	.pfc-button .wp-block-button__link {
