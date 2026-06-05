@@ -7,7 +7,7 @@ Description: Custom WordPress block theme for the Paradis Flooring front page bu
 Requires at least: 6.7
 Tested up to: 7.0
 Requires PHP: 7.2
-Version: 1.41
+Version: 1.42
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: paradis-flooring
@@ -337,47 +337,8 @@ li {
 
 
 
-.pfc-value-strip {
-	padding: 16px 0;
-}
-
-.pfc-value-grid {
-	display: grid !important;
-	gap: 0;
-}
-
-.pfc-value-grid-four {
-	grid-template-columns: repeat(4, minmax(0, 1fr));
-}
-
-.pfc-value-card {
-	display: block;
-	text-align: center;
-	padding: 0 clamp(18px, 2vw, 28px);
-}
-
 .pfc-value-icon {
 	display: none !important;
-}
-
-.pfc-value-title {
-	margin: 0 0 8px;
-	font-family: "Inter", sans-serif; /* Explicitly forces Inter here only */
-	font-size: 0.82rem;
-	font-weight: 700; /* Sturdy but not overly heavy or bold */
-	color: #4a3e3d; /* Muted, dark cocoa-charcoal tint instead of harsh black */
-	letter-spacing: 0.05em;
-	line-height: 1.3;
-	text-transform: uppercase;
-	margin-left: 0 !important;
-	margin-right: 0 !important;
-	margin-bottom: 8px !important;
-	max-width: 100% !important;
-	white-space: nowrap !important;
-}
-
-.pfc-value-card:nth-child(1) .pfc-value-title {
-	max-width: 8ch;
 }
 
 .pfc-value-text {
@@ -386,6 +347,49 @@ li {
 	font-size: 0.85rem;
 	font-weight: 500;
 	line-height: 1.5;
+}
+
+/* ==========================================================================
+   UNIFIED BRAND VALUES COMPONENT LAYOUT ENGINE (3-State Clean Architecture)
+   ========================================================================== */
+
+/* --- STATE 1: GLOBAL & DESKTOP DEFAULT BASELINE (981px and Above) --- */
+.pfc-value-strip {
+	background-color: #fffaf5 !important;
+	padding-top: 40px !important;
+	padding-bottom: 40px !important;
+	margin: 0 !important;
+}
+
+.pfc-value-grid-four {
+	display: flex !important;
+	flex-direction: row !important;
+	justify-content: space-between !important;
+	align-items: stretch !important;
+	gap: 24px !important;
+	max-width: 1200px !important;
+	margin: 0 auto !important;
+}
+
+.pfc-value-card {
+	flex: 1 !important;
+	padding: 20px !important;
+	text-align: center !important;
+	border-right: 1px solid rgba(98, 49, 17, 0.08) !important;
+}
+
+.pfc-value-card:last-child {
+	border-right: 0 !important;
+}
+
+.pfc-value-title {
+	font-family: "Inter", sans-serif;
+	font-size: 0.85rem;
+	font-weight: 700;
+	color: #4a3e3d;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	margin: 0 0 12px 0 !important;
 }
 
 .pfc-work,
@@ -1092,23 +1096,7 @@ li {
 		padding: 0 24px;
 	}
 
-	.pfc-value-grid-four {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-		row-gap: 18px;
-	}
 
-	.pfc-value-card:nth-child(2) {
-		border-right: 0;
-	}
-
-	.pfc-value-card:nth-child(-n+2) {
-		padding-bottom: 18px;
-		border-bottom: 1px solid var(--pfc-line);
-	}
-
-	.pfc-value-card:nth-child(3) {
-		padding-top: 18px;
-	}
 
 	.pfc-service-grid {
 		grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1257,7 +1245,7 @@ li {
 	}
 }
 
-@media (max-width: 760px) {
+@media (max-width: 767px) {
 	:root {
 		--pfc-content: min(100% - 32px, 1160px);
 	}
@@ -1416,21 +1404,7 @@ li {
 		flex-direction: column;
 	}
 
-	/* 1. Establish a stable, fluid container */
-	/* 1. Container structural track height and spacing padding */
-	.pfc-value-grid-four {
-		display: block !important;
-		position: relative !important;
-		height: 125px !important; 
-		max-width: 290px !important;
-		
-		/* The Space Killer: Aggressively forces the layout boundaries tight */
-		margin-top: 20px !important; 
-		margin-left: auto !important;
-		margin-right: auto !important;
-		margin-bottom: 0px !important; /* Strips out any leaking desktop block margins */
-		padding-bottom: 0px !important; /* Kills container dead zones */
-	}
+
 
 	.pfc-contact-grid {
 		margin-top: 0 !important;
@@ -1456,86 +1430,7 @@ li {
 		position: static;
 	}
 
-	/* 2. Stacking cards cleanly with the fading timeline */
-	.pfc-value-card {
-		position: absolute !important;
-		top: 0;
-		left: 0;
-		width: 100%;
-		padding: 0 !important;
-		border: none !important;
-		text-align: center !important;
-		opacity: 0;
-		animation: premiumAmbientFade 16s cubic-bezier(0.215, 0.610, 0.355, 1.000) infinite;
-		
-		/* Flex layout forces the internal dot to sit naturally below the text */
-		display: flex !important;
-		flex-direction: column !important;
-		align-items: center !important;
-	}
 
-	/* Staggered entry timing loops */
-	.pfc-value-grid-four .pfc-value-card:nth-child(1) { animation-delay: 0s; }
-	.pfc-value-grid-four .pfc-value-card:nth-child(2) { animation-delay: 4s; }
-	.pfc-value-grid-four .pfc-value-card:nth-child(3) { animation-delay: 8s; }
-	.pfc-value-grid-four .pfc-value-card:nth-child(4) { animation-delay: 12s; }
-
-	.pfc-value-title {
-		white-space: normal !important;
-		text-wrap: balance !important;
-	}
-
-	/* 3. The Unified Progress Bar: Self-contained inside the card element */
-	.pfc-value-card::after {
-		content: '';
-		display: block !important;
-		margin-top: 16px !important; /* Keeps a perfectly fluid, zoom-safe distance from the text string */
-		width: 64px;
-		height: 6px;
-		background-repeat: no-repeat;
-		background-size: 16px 6px;
-	}
-
-	/* 4. The Magic Trick: Each card draws the full set of dots, but highlights its own slot */
-	/* Card 1 active */
-	.pfc-value-grid-four .pfc-value-card:nth-child(1)::after {
-		background-image: 
-			radial-gradient(circle, #623111 2px, transparent 3px), /* Active Brand Copper */
-			radial-gradient(circle, rgba(74, 62, 61, 0.15) 2px, transparent 3px),
-			radial-gradient(circle, rgba(74, 62, 61, 0.15) 2px, transparent 3px),
-			radial-gradient(circle, rgba(74, 62, 61, 0.15) 2px, transparent 3px);
-		background-position: 0px 0, 16px 0, 32px 0, 48px 0;
-	}
-
-	/* Card 2 active */
-	.pfc-value-grid-four .pfc-value-card:nth-child(2)::after {
-		background-image: 
-			radial-gradient(circle, rgba(74, 62, 61, 0.15) 2px, transparent 3px),
-			radial-gradient(circle, #623111 2px, transparent 3px), /* Active Brand Copper */
-			radial-gradient(circle, rgba(74, 62, 61, 0.15) 2px, transparent 3px),
-			radial-gradient(circle, rgba(74, 62, 61, 0.15) 2px, transparent 3px);
-		background-position: 0px 0, 16px 0, 32px 0, 48px 0;
-	}
-
-	/* Card 3 active */
-	.pfc-value-grid-four .pfc-value-card:nth-child(3)::after {
-		background-image: 
-			radial-gradient(circle, rgba(74, 62, 61, 0.15) 2px, transparent 3px),
-			radial-gradient(circle, rgba(74, 62, 61, 0.15) 2px, transparent 3px),
-			radial-gradient(circle, #623111 2px, transparent 3px), /* Active Brand Copper */
-			radial-gradient(circle, rgba(74, 62, 61, 0.15) 2px, transparent 3px);
-		background-position: 0px 0, 16px 0, 32px 0, 48px 0;
-	}
-
-	/* Card 4 active */
-	.pfc-value-grid-four .pfc-value-card:nth-child(4)::after {
-		background-image: 
-			radial-gradient(circle, rgba(74, 62, 61, 0.15) 2px, transparent 3px),
-			radial-gradient(circle, rgba(74, 62, 61, 0.15) 2px, transparent 3px),
-			radial-gradient(circle, rgba(74, 62, 61, 0.15) 2px, transparent 3px),
-			radial-gradient(circle, #623111 2px, transparent 3px); /* Active Brand Copper */
-		background-position: 0px 0, 16px 0, 32px 0, 48px 0;
-	}
 
 	.pfc-gallery.has-nested-images {
 		display: grid !important;
@@ -1648,95 +1543,145 @@ li {
 		max-width: none;
 	}
 
-	/* 1. Collapse the bottom space of the value component strip */
-	.wp-block-group.pfc-value-strip {
-		margin-bottom: 0px !important;
-		padding-bottom: 0px !important;
-	}
-
-	/* 2. Pull the work grid section up tightly against the dots */
-	.wp-block-group.pfc-work {
-		margin-top: 0px !important;
-		padding-top: 10px !important; /* Tiny premium cushion below the tracking track */
-	}
-}
-
-/* 5. The Shared Animation Timeline */
-@keyframes premiumAmbientFade {
-	0% { opacity: 0; }
-	4% { opacity: 1; }   /* Clean, steady fade-in */
-	21% { opacity: 1; }  /* Stable reading window */
-	25% { opacity: 0; }  /* Seamless dissolve exit */
-	100% { opacity: 0; }
 }
 
 .page-id-37 .pfc-bottom-cta {
 	display: none;
 }
 
-@media (min-width: 761px) and (max-width: 980px) {
+/* --- STATE 2: TABLET / SMALL PC BREAKPOINT (768px to 980px) --- */
+@media (min-width: 768px) and (max-width: 980px) {
 	.pfc-mobile-nav summary::after {
 		background: var(--pfc-brown);
 		box-shadow: 0 7px 0 var(--pfc-brown), 0 14px 0 var(--pfc-brown);
 	}
-}
 
-/* ==========================================================================
-   Surgical Value Cards Tablet Optimization: The Row Extension
-   ========================================================================== */
-@media (min-width: 761px) and (max-width: 980px) {
-	/* 1. Force the layout to maintain its clean 4-column desktop horizontal flow */
+	.pfc-value-strip {
+		padding-top: 20px !important;
+		padding-bottom: 20px !important;
+	}
+
 	.pfc-value-grid-four {
 		display: flex !important;
 		flex-direction: row !important;
-		justify-content: space-between !important;
-		gap: 12px !important; /* Tightened gap for smaller viewports */
-		max-width: 100% !important;
+		gap: 12px !important;
 		margin: 0 auto !important;
 	}
 
-	/* 2. Compact the individual card footprints to fit the row comfortably */
 	.pfc-value-card {
-		flex: 1 !important;
-		padding: 0 10px 10px !important; /* Shaved padding tight to prevent awkward word wrapping */
-		text-align: center !important;
-		
-		/* Clean, light vertical dividers between the columns */
+		padding: 15px 10px !important;
 		border-right: 1px solid rgba(98, 49, 17, 0.08) !important;
-		border-left: 0 !important;
-		border-top: 0 !important;
-		border-bottom: 0 !important;
 	}
 
-	/* Strip the final divider line off the edge card */
 	.pfc-value-card:last-child {
 		border-right: 0 !important;
 	}
 
-	/* 3. Drop font sizing scales smoothly to match the tight viewport */
 	.pfc-value-title {
-		font-size: 0.75rem !important; /* Slightly crisper, smaller tracking title */
+		font-size: 0.75rem !important;
 		white-space: normal !important;
 		text-wrap: balance !important;
 		margin-bottom: 6px !important;
 	}
 	
 	.pfc-value-card p {
-		font-size: 0.85rem !important; /* Matches the tighter grid rhythm */
+		font-size: 0.82rem !important;
 		line-height: 1.4 !important;
 	}
 
-	/* 4. Reset parent group paddings to naturally bring sections together */
-	.wp-block-group.pfc-value-strip {
-		margin-top: 0px !important;
-		margin-bottom: 20px !important;
-		padding-bottom: 20px !important;
+	.pfc-work {
+		padding-top: 24px !important;
+		margin-top: 0 !important;
+	}
+}
+
+/* --- STATE 3: ULTRA-COMPACT MOBILE BREAKPOINT (767px and Below) --- */
+@media (max-width: 767px) {
+	.pfc-value-strip {
+		padding-top: 15px !important;
+		padding-bottom: 15px !important;
+		margin: 0 !important;
 	}
 
-	.wp-block-group.pfc-work {
-		margin-top: 0px !important;
-		padding-top: 0 !important;
+	.pfc-value-grid-four {
+		display: block !important;
+		position: relative !important;
+		height: 110px !important; 
+		margin: 0 auto !important;
+		max-width: 290px !important;
 	}
+
+	.pfc-value-card {
+		position: absolute !important;
+		top: 0;
+		left: 0;
+		width: 100%;
+		padding: 0 !important;
+		border: none !important;
+		text-align: center !important;
+		opacity: 0;
+		animation: premiumAmbientFade 16s cubic-bezier(0.215, 0.610, 0.355, 1.000) infinite;
+		display: flex !important;
+		flex-direction: column !important;
+		align-items: center !important;
+	}
+
+	.pfc-value-grid-four .pfc-value-card:nth-child(1) { animation-delay: 0s; }
+	.pfc-value-grid-four .pfc-value-card:nth-child(2) { animation-delay: 4s; }
+	.pfc-value-grid-four .pfc-value-card:nth-child(3) { animation-delay: 8s; }
+	.pfc-value-grid-four .pfc-value-card:nth-child(4) { animation-delay: 12s; }
+
+	.pfc-value-title {
+		font-size: 0.8rem !important;
+		white-space: normal !important;
+		text-wrap: balance !important;
+		margin: 0 0 6px 0 !important;
+	}
+	
+	.pfc-value-card p {
+		font-size: 0.85rem !important;
+		line-height: 1.3 !important;
+	}
+
+	.pfc-value-card::after {
+		content: '';
+		display: block !important;
+		margin-top: 14px !important; 
+		width: 64px;
+		height: 6px;
+		background-repeat: no-repeat;
+		background-size: 16px 6px;
+	}
+
+	.pfc-value-grid-four .pfc-value-card:nth-child(1)::after {
+		background-image: radial-gradient(circle, #623111 2px, transparent 3px), radial-gradient(circle, rgba(74, 62, 61, 0.15) 2px, transparent 3px), radial-gradient(circle, rgba(74, 62, 61, 0.15) 2px, transparent 3px), radial-gradient(circle, rgba(74, 62, 61, 0.15) 2px, transparent 3px);
+		background-position: 0px 0, 16px 0, 32px 0, 48px 0;
+	}
+	.pfc-value-grid-four .pfc-value-card:nth-child(2)::after {
+		background-image: radial-gradient(circle, rgba(74, 62, 61, 0.15) 2px, transparent 3px), radial-gradient(circle, #623111 2px, transparent 3px), radial-gradient(circle, rgba(74, 62, 61, 0.15) 2px, transparent 3px), radial-gradient(circle, rgba(74, 62, 61, 0.15) 2px, transparent 3px);
+		background-position: 0px 0, 16px 0, 32px 0, 48px 0;
+	}
+	.pfc-value-grid-four .pfc-value-card:nth-child(3)::after {
+		background-image: radial-gradient(circle, rgba(74, 62, 61, 0.15) 2px, transparent 3px), radial-gradient(circle, rgba(74, 62, 61, 0.15) 2px, transparent 3px), radial-gradient(circle, #623111 2px, transparent 3px), radial-gradient(circle, rgba(74, 62, 61, 0.15) 2px, transparent 3px);
+		background-position: 0px 0, 16px 0, 32px 0, 48px 0;
+	}
+	.pfc-value-grid-four .pfc-value-card:nth-child(4)::after {
+		background-image: radial-gradient(circle, rgba(74, 62, 61, 0.15) 2px, transparent 3px), radial-gradient(circle, rgba(74, 62, 61, 0.15) 2px, transparent 3px), radial-gradient(circle, rgba(74, 62, 61, 0.15) 2px, transparent 3px), radial-gradient(circle, #623111 2px, transparent 3px);
+		background-position: 0px 0, 16px 0, 32px 0, 48px 0;
+	}
+
+	.pfc-work {
+		margin-top: 0 !important;
+		padding-top: 20px !important;
+	}
+}
+
+@keyframes premiumAmbientFade {
+	0% { opacity: 0; }
+	4% { opacity: 1; }   
+	21% { opacity: 1; }  
+	25% { opacity: 0; }  
+	100% { opacity: 0; }
 }
 
 @media (min-width: 1600px) {
