@@ -47,7 +47,7 @@ if ( ! function_exists( 'paradis_flooring_codex_enqueue_google_fonts' ) ) :
 	function paradis_flooring_codex_enqueue_google_fonts() {
 		wp_enqueue_style(
 			'paradis-flooring-codex-fonts',
-			'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap',
+			'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap',
 			array(),
 			null
 		);

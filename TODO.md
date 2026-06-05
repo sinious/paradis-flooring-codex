@@ -99,7 +99,7 @@ Last edited file:
 
 Current version:
 
-- `1.25`
+- `1.35`
 
 Recent changes:
 
@@ -122,6 +122,9 @@ Recent changes:
 - Converted split-hero columns from `vw` to percentages to scale properly within bounded width limits (version 1.25).
 - Updated subpage header template part (`parts/header.html`) to use dynamic FSE `wp:site-logo` block with dynamic link pointing to the site root, set up database `site_logo` option to point to attachment ID `172`, updated database site name `blogname` to `"PARADIS FLOORING LLC"`, and added a fallback hook filter in `functions.php` to handle `wp:site-title` text replacements.
 - Fixed homepage logo link stripping conflict in inline JS `cleanupImageLinks` function inside `functions.php`.
+- Center-aligned the split-hero copy area globally on all pages (desktop and mobile) to unify the design and fix the left-alignment issue on subpages, and corrected a syntax error in the mobile `.pfc-hero-copy > *` margin rule (version 1.33).
+- Normalized vertical spacing, margins, and container padding inside `.pfc-hero-copy` globally across all templates to remove discrepancies caused by varying browser/Gutenberg heading default styles (version 1.34).
+- Converted all subpage hero title blocks in the database from H1 to H4 tag structure, unified global hero title sizes across all pages on all screens to match the homepage, and removed all subpage-specific stylesheet overrides (version 1.35).
 
 ## Known Issues / Verify Next
 
