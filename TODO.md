@@ -99,10 +99,15 @@ Last edited file:
 
 Current version:
 
-- `1.35`
+- `1.42`
 
 Recent changes:
 
+- Refactored the brand values section layout engine into a clean 3-state viewport architecture (Version 1.42):
+  - State 1: Global & Desktop Baseline (981px+) using a clean flex row and 24px gap with border dividers.
+  - State 2: Tablet Breakpoint (768px-980px) utilizing a tighter flex row flow with 12px gap, 0.75rem titles, and adjusted typography.
+  - State 3: Ultra-Compact Mobile (767px and below) utilizing absolute card stacking, height-locked container (110px), cubic-bezier fading carousel, and inline radial-gradient indicator dots.
+  - Surgically removed all legacy, experimental, and disconnected media query overrides for the values section.
 - Mobile homepage gallery now uses a 2-column grid showing all six thumbnails; thumbnails link to the Gallery page.
 - Aligned the homepage hero headline, divider, body text, and CTA to one left edge.
 - Corrected hero typography scale, divider alignment, and CTA spacing on desktop/mobile.
