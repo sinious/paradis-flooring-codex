@@ -7,7 +7,7 @@ Description: Custom WordPress block theme for the Paradis Flooring front page bu
 Requires at least: 6.7
 Tested up to: 7.0
 Requires PHP: 7.2
-Version: 1.42
+Version: 1.43
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: paradis-flooring
@@ -1245,7 +1245,7 @@ li {
 	}
 }
 
-@media (max-width: 767px) {
+@media (max-width: 782px) {
 	:root {
 		--pfc-content: min(100% - 32px, 1160px);
 	}
@@ -1550,7 +1550,7 @@ li {
 }
 
 /* --- STATE 2: TABLET / SMALL PC BREAKPOINT (768px to 980px) --- */
-@media (min-width: 768px) and (max-width: 980px) {
+@media (min-width: 783px) and (max-width: 980px) {
 	.pfc-mobile-nav summary::after {
 		background: var(--pfc-brown);
 		box-shadow: 0 7px 0 var(--pfc-brown), 0 14px 0 var(--pfc-brown);
@@ -1596,7 +1596,7 @@ li {
 }
 
 /* --- STATE 3: ULTRA-COMPACT MOBILE BREAKPOINT (767px and Below) --- */
-@media (max-width: 767px) {
+@media (max-width: 782px) {
 	.pfc-value-strip {
 		padding-top: 15px !important;
 		padding-bottom: 15px !important;
