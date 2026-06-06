@@ -97,10 +97,11 @@ Last edited file:
 
 - `style.css`
 
-- `1.48`
+- `1.49`
 
 Recent changes:
 
+- Cleaned up legacy and conflicting mobile navigation overrides (Version 1.49). Removed redundant `.pfc-mobile-nav-wrapper`, `input.pfc-nav-checkbox`, `label.pfc-nav-burger`, and `.pfc-mobile-nav-panel` styles from the `(max-width: 980px)` and `(max-width: 782px)` media query blocks. Standardized the mobile menu geometry on the active CSS mobile navigation engine located under `/* WHERE WE ARE WORKING */` (enforced under the `(width < 783px)` media query).
 - Corrected mobile navigation menu alignment, text centering, and layout position on the home page (Version 1.48). Placed `.pfc-mobile-nav-panel` flush below the top brown bar by using `top: 100%` and `right: 0` on the full-height `100%` wrapper. Added `box-sizing: border-box` to links to fix padding width breakout and center text perfectly.
 - Remade the mobile navigation on the front page as a pure-CSS checkbox toggle (`.pfc-mobile-nav-wrapper`) and updated `style.css` to hide it on desktop and show it on tablet/mobile (Version 1.46). This allows flawless bidirectional cascading transitions (top-to-bottom on open, bottom-to-top on close) without layout cutoff from native browser details elements.
 - Implemented pure-CSS bidirectional cascading dropdown animation on the native `<details>` element (Version 1.45). Overrode User Agent stylesheets to allow transition timing on close (sliding links up bottom-to-top) and opening timing (sliding links down top-to-bottom). Removed duplicate navigation overrides under the `782px` breakpoint.

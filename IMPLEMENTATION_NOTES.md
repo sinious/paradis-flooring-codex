@@ -49,6 +49,7 @@
 - First confirmed cause: `Home` contains raw `<details class="pfc-mobile-nav">...</details>` markup inserted directly into the block stream instead of being wrapped in a valid block.
 - Second confirmed cause across Services, Gallery, Experience, About, and Contact: some `core/column` cards were saved with raw `<h3>` and `<p>` HTML directly inside the column wrapper instead of nested Gutenberg `Heading` and `Paragraph` blocks.
 - Going forward, custom structural HTML must live in a Custom HTML block or reusable template part; editable page content should stay as normal core blocks with classes for styling.
+- `style.css` version `1.49` cleans up redundant and conflicting mobile navigation CSS selectors and rule blocks inside the `(max-width: 980px)` and `(max-width: 782px)` media query wrappers, standardizing the active mobile menu geometry on the checkbox toggle engine under `/* WHERE WE ARE WORKING */` (enforced under the `(width < 783px)` media query).
 
 ## Verification Notes
 
