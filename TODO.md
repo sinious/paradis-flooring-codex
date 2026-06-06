@@ -97,12 +97,15 @@ Last edited file:
 
 - `style.css`
 
-Current version:
-
-- `1.42`
+- `1.48`
 
 Recent changes:
 
+- Corrected mobile navigation menu alignment, text centering, and layout position on the home page (Version 1.48). Placed `.pfc-mobile-nav-panel` flush below the top brown bar by using `top: 100%` and `right: 0` on the full-height `100%` wrapper. Added `box-sizing: border-box` to links to fix padding width breakout and center text perfectly.
+- Remade the mobile navigation on the front page as a pure-CSS checkbox toggle (`.pfc-mobile-nav-wrapper`) and updated `style.css` to hide it on desktop and show it on tablet/mobile (Version 1.46). This allows flawless bidirectional cascading transitions (top-to-bottom on open, bottom-to-top on close) without layout cutoff from native browser details elements.
+- Implemented pure-CSS bidirectional cascading dropdown animation on the native `<details>` element (Version 1.45). Overrode User Agent stylesheets to allow transition timing on close (sliding links up bottom-to-top) and opening timing (sliding links down top-to-bottom). Removed duplicate navigation overrides under the `782px` breakpoint.
+- Refactored mobile navigation dropdown toggle for bidirectional cascading animation (Version 1.44). Links stagger down sequentially on open, and stagger back up sequentially on close.
+- Aligned custom responsive breakpoints in `style.css` to Gutenberg's native mobile stack threshold of `782px` (Version 1.43). Updated mobile query limits to `782px` and tablet start bounds to `783px` to prevent layout overlaps and drift.
 - Refactored the brand values section layout engine into a clean 3-state viewport architecture (Version 1.42):
   - State 1: Global & Desktop Baseline (981px+) using a clean flex row and 24px gap with border dividers.
   - State 2: Tablet Breakpoint (768px-980px) utilizing a tighter flex row flow with 12px gap, 0.75rem titles, and adjusted typography.
