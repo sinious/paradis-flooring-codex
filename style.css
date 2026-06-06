@@ -7,7 +7,7 @@ Description: Custom WordPress block theme for the Paradis Flooring front page bu
 Requires at least: 6.7
 Tested up to: 7.0
 Requires PHP: 7.2
-Version: 1.43
+Version: 1.44
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: paradis-flooring
@@ -1015,16 +1015,163 @@ li {
 	text-transform: uppercase;
 }
 
-.pfc-inner-nav {
+/* .pfc-inner-nav {
 	font-size: 0.78rem;
 	font-weight: 800;
 	letter-spacing: 0.08em;
 	text-transform: uppercase;
+} */
+
+
+/* ==========================================================================
+   Mobile Dropdown Navigation (Hardcoded Custom HTML Structural Engine)
+   ========================================================================== */
+
+/* 1. Relative Alignment Parent Anchor (Surgically locks to top-right corner) */
+.pfc-mobile-nav-wrapper {
+    position: absolute !important;
+    top: 50% !important;
+    right: 24px !important;
+    transform: translateY(-50%) !important;
+    z-index: 100000 !important;
+    display: inline-block !important;
 }
 
-.pfc-inner-nav .wp-block-navigation-item__content {
-	text-decoration: none;
+/* 2. Hide the baseline checkbox tracking input toggle off-screen */
+input.pfc-nav-checkbox {
+    position: absolute !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    width: 1px !important;
+    height: 1px !important;
 }
+
+/* 3. Construct the physical visible white hamburger grid button */
+label.pfc-nav-burger {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    width: 32px !important;
+    height: 22px !important;
+    cursor: pointer !important;
+    user-select: none !important;
+}
+
+/* Format the three individual horizontal white vector lines */
+label.pfc-nav-burger span {
+    display: block !important;
+    width: 100% !important;
+    height: 3px !important;
+    background-color: #ffffff !important;
+    border-radius: 2px !important;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease !important;
+}
+
+/* 4. The Right-Aligned Dropdown Panel (Background box snaps instantly, no flashing) */
+.pfc-mobile-nav-wrapper .pfc-mobile-nav-panel {
+    position: absolute !important;
+    top: calc(100% + 20px) !important; /* Drops the box flush under the header background limits */
+    right: -10px !important;
+    left: auto !important; /* Forces the box to ignore hero box centering logic */
+    width: 280px !important;
+    background: rgba(101, 57, 26, 0.98) !important; /* Deep solid brown brand theme */
+    display: flex !important; /* Keeps flex layout active for animation */
+    visibility: hidden !important; /* Start as hidden */
+    opacity: 0 !important; /* Start as transparent */
+    transform: translateY(10px) !important; /* Start slightly offset */
+    pointer-events: none !important; /* Prevent interaction while closed */
+    flex-direction: column !important;
+    z-index: 99999 !important;
+    box-shadow: -4px 8px 32px rgba(0, 0, 0, 0.4) !important;
+    padding: 0 !important;
+    border-radius: 4px !important;
+    overflow: hidden !important;
+    
+    /* Delay visibility hidden on close so the opacity and transform transitions can run */
+    transition: visibility 0s linear 0.45s, opacity 0.35s ease, transform 0.35s ease !important;
+}
+
+/* 5. Vertical Anchor Row presentation styling rules */
+.pfc-mobile-nav-wrapper .pfc-mobile-nav-panel a {
+    text-decoration: none !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    text-align: center !important;
+    padding: 1.35rem 1rem !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    display: block !important;
+    width: 100% !important;
+
+    /* The Closed Baseline State: Prepare links for stagger entry */
+    opacity: 0 !important;
+    transform: translateY(-12px) !important;
+    
+    /* Smooth rendering interpolation for when the state changes */
+    transition: background-color 0.2s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease !important;
+    will-change: transform, opacity;
+}
+
+/* Hover highlights */
+.pfc-mobile-nav-wrapper .pfc-mobile-nav-panel a:hover {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Clear out the line border tag off the very last row link child element */
+.pfc-mobile-nav-wrapper .pfc-mobile-nav-panel a:last-child {
+    border-bottom: none !important;
+}
+
+/* Stagger delays when closed (collapsing/stagger back up) */
+.pfc-mobile-nav-wrapper .pfc-mobile-nav-panel a:nth-child(1) { transition-delay: 0.18s !important; }
+.pfc-mobile-nav-wrapper .pfc-mobile-nav-panel a:nth-child(2) { transition-delay: 0.14s !important; }
+.pfc-mobile-nav-wrapper .pfc-mobile-nav-panel a:nth-child(3) { transition-delay: 0.10s !important; }
+.pfc-mobile-nav-wrapper .pfc-mobile-nav-panel a:nth-child(4) { transition-delay: 0.06s !important; }
+.pfc-mobile-nav-wrapper .pfc-mobile-nav-panel a:nth-child(5) { transition-delay: 0.02s !important; }
+.pfc-mobile-nav-wrapper .pfc-mobile-nav-panel a:nth-child(6) { transition-delay: 0s !important; }
+
+/* ==========================================================================
+   CSS Toggle Core Mechanics + Staggered Cascade Engine
+   ========================================================================== */
+
+/* Transition the panel container container cleanly on click */
+input.pfc-nav-checkbox:checked ~ .pfc-mobile-nav-panel {
+    visibility: visible !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    pointer-events: auto !important;
+    transition-delay: 0s !important; /* Reset delay on open */
+}
+
+/* Reset the positioning offsets of links smoothly when opened */
+input.pfc-nav-checkbox:checked ~ .pfc-mobile-nav-panel a {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Incremental Delay Track: Offsets the animation pipeline step-by-step */
+input.pfc-nav-checkbox:checked ~ .pfc-mobile-nav-panel a:nth-child(1) { transition-delay: 0.02s !important; }
+input.pfc-nav-checkbox:checked ~ .pfc-mobile-nav-panel a:nth-child(2) { transition-delay: 0.06s !important; }
+input.pfc-nav-checkbox:checked ~ .pfc-mobile-nav-panel a:nth-child(3) { transition-delay: 0.10s !important; }
+input.pfc-nav-checkbox:checked ~ .pfc-mobile-nav-panel a:nth-child(4) { transition-delay: 0.14s !important; }
+input.pfc-nav-checkbox:checked ~ .pfc-mobile-nav-panel a:nth-child(5) { transition-delay: 0.18s !important; }
+input.pfc-nav-checkbox:checked ~ .pfc-mobile-nav-panel a:nth-child(6) { transition-delay: 0.22s !important; }
+
+/* Smoothly animate the standard hamburger icon lines into a sharp "X" close icon */
+input.pfc-nav-checkbox:checked + label.pfc-nav-burger span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg) !important;
+}
+input.pfc-nav-checkbox:checked + label.pfc-nav-burger span:nth-child(2) {
+    opacity: 0 !important;
+}
+input.pfc-nav-checkbox:checked + label.pfc-nav-burger span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg) !important;
+}
+
+
+/* GALLERY */
 
 .pfc-gallery-page .pfc-gallery-masonry {
 	width: min(1320px, calc(100vw - 80px));
