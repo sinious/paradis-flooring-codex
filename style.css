@@ -1042,7 +1042,7 @@ li {
     display: none !important;
 }
 
-@media (width < 783px) {
+@media (width < 783px) { 
     .pfc-mobile-nav-wrapper {
         display: block !important;
         position: fixed !important;
