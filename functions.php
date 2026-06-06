@@ -54,3 +54,20 @@ if ( ! function_exists( 'paradis_flooring_codex_enqueue_google_fonts' ) ) :
 	}
 endif;
 add_action( 'wp_enqueue_scripts', 'paradis_flooring_codex_enqueue_google_fonts' );
+
+/**
+ * Enqueue the Interactive Gallery Choice Engine Script
+ */
+function pfc_enqueue_gallery_game_assets() {
+    // Only target the specific page layout to protect global compute overhead
+    if ( is_page( 'gallery' ) ) {
+        wp_enqueue_script(
+            'pfc-gallery-game',
+            get_template_directory_uri() . '/js/pfc-gallery-game.js',
+            array(), // No heavy framework dependencies needed
+            '1.0.0',
+            true    // Injected into the footer to prevent blocking DOM render tracks
+        );
+    }
+}
+add_action( 'wp_enqueue_scripts', 'pfc_enqueue_gallery_game_assets' );

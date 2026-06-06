@@ -1042,11 +1042,10 @@ li {
     display: none !important;
 }
 
-@media (width < 783px) { 
+@media (width < 981px) {
     .pfc-mobile-nav-wrapper {
         display: block !important;
         position: fixed !important;
-        /* Lock burger explicitly to upper right view track */
         top: 40px !important; 
         right: 24px !important;
         z-index: 100000 !important;
@@ -1081,6 +1080,13 @@ li {
                 &:nth-child(1) { transform: translateY(9px) rotate(45deg) !important; }
                 &:nth-child(2) { opacity: 0 !important; }
                 &:nth-child(3) { transform: translateY(-10px) rotate(-45deg) !important; }
+                
+                /* Adaptive active Close 'X' fill logic */
+                background-color: var(--pfc-brown) !important;
+
+                @media (width <= 782px) {
+                    background-color: #ffffff !important;
+                }
             }
         }
 
@@ -1098,9 +1104,16 @@ li {
                 display: block !important;
                 width: 100% !important;
                 height: 3px !important;
-                background-color: #ffffff !important;
                 border-radius: 2px !important;
                 transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease !important;
+                
+                /* Default to brown for tablet viewports over white tracks */
+                background-color: var(--pfc-brown) !important;
+
+                /* Toggle back to clean white when header scales below the WP mobile break */
+                @media (width <= 782px) {
+                    background-color: #ffffff !important;
+                }
             }
         }
 
@@ -1109,9 +1122,7 @@ li {
             display: flex !important;
             flex-direction: column !important;
             position: fixed !important;
-            /* Coordinate calculations directly from top and right window view bounds */
-            top: 76px !important; 
-            right: 24px !important;
+            right: 0 !important; 
             left: auto !important;
             width: 280px !important;
             background: rgba(101, 57, 26, 0.98) !important;
@@ -1120,6 +1131,14 @@ li {
             padding: 0 !important;
             border-radius: 4px !important;
             overflow: hidden !important;
+
+            /* Adaptive Height Handoff Strategy */
+            @media (782px < width < 981px) {
+                top: 86px !important; /* Flushed under the white desktop header area */
+            }
+            @media (width <= 782px) {
+                top: 103px !important; /* Drops down to clear the brown mobile header area */
+            }
 
             /* Transition Properties (Pre-packaged to eliminate screen blinking) */
             visibility: hidden !important;
