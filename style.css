@@ -1905,6 +1905,24 @@ figure.wp-block-gallery.pfc-masonry-deck,
 	}
 }
 
+
+
+/*** MOBILE GUTENBERG ***/
+/***********************/
+
+@media (width > 599px) and (width < 981px) {
+	/* Disappear text nav bar */
+	.wp-block-navigation__responsive-container {
+		display:none !important;
+	}
+
+}
+
+
+
+
+
+
 @keyframes premiumAmbientFade {
 	0% { opacity: 0; }
 	4% { opacity: 1; }   
