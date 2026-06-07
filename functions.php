@@ -71,3 +71,17 @@ function pfc_enqueue_gallery_game_assets() {
     }
 }
 add_action( 'wp_enqueue_scripts', 'pfc_enqueue_gallery_game_assets' );
+
+/**
+ * Enqueue Core Smart Header Interaction Framework
+ */
+function pfc_enqueue_smart_header_script() {
+    wp_enqueue_script(
+        'pfc-smart-header',
+        get_template_directory_uri() . '/js/pfc-smart-header.js',
+        array(), 
+        '1.0.0',
+        true // Inject smoothly into footer to prevent rendering blocks on paint tracks
+    );
+}
+add_action( 'wp_enqueue_scripts', 'pfc_enqueue_smart_header_script' );
